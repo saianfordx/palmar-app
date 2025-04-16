@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 type PatternProps = {
   className?: string;
-  variant?: "zigzag" | "dots" | "mayan" | "tropical";
+  variant?: "zigzag" | "dots" | "mayan" | "tropical" | "palmar-gold" | "palmar-red";
   color?: string;
 };
 
@@ -100,6 +100,12 @@ export function DecorativePattern({
         <rect width="100%" height="100%" fill="url(#tropical)" />
       </svg>
     ),
+    "palmar-gold": (
+      <div className="w-full h-full bg-palmar-pattern-gold opacity-20"></div>
+    ),
+    "palmar-red": (
+      <div className="w-full h-full bg-palmar-pattern-red opacity-20"></div>
+    )
   };
 
   return (
@@ -115,13 +121,13 @@ export function DecorativePattern({
 export function MayanBorder({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn("relative border-2 border-accent/50 p-4", className)}
+      className={cn("relative border-2 border-palmar-gold/50 p-4", className)}
       {...props}
     >
-      <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-accent" />
-      <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-accent" />
-      <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-accent" />
-      <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-accent" />
+      <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-palmar-gold" />
+      <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-palmar-gold" />
+      <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-palmar-gold" />
+      <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-palmar-gold" />
       {props.children}
     </div>
   );

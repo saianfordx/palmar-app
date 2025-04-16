@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Poppins } from "next/font/google"
-import "./globals.css"
+import "../styles/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { DecorativePattern } from "@/components/ui/decorative-patterns"
 
@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <div className="relative min-h-screen">
-            <DecorativePattern variant="tropical" className="opacity-5" color="var(--accent)" />
+            <DecorativePattern variant="palmar-gold" className="opacity-10" />
             {children}
           </div>
         </ThemeProvider>

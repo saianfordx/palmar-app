@@ -14,73 +14,98 @@ body {
 
 @layer base {
   :root {
-    --background: 40 30% 97%;
-    --foreground: 175 80% 20%;
-    --card: 35 25% 96%;
-    --card-foreground: 175 80% 20%;
-    --popover: 35 25% 96%;
-    --popover-foreground: 175 80% 20%;
-    --primary: 345 80% 50%;
-    --primary-foreground: 40 30% 97%;
-    --secondary: 155 60% 45%;
-    --secondary-foreground: 40 30% 97%;
-    --muted: 30 15% 90%;
-    --muted-foreground: 175 40% 35%;
-    --accent: 30 90% 55%;
-    --accent-foreground: 40 30% 97%;
+    /* Palmar Color Palette */
+    --background: 180 30% 92%;
+    --foreground: 20 30% 25%;
+    
+    /* Main colors from the Palmar design */
+    --orange: 35 100% 60%;      /* Bright orange */
+    --red: 5 75% 55%;           /* Earthy red */
+    --gold: 45 80% 65%;         /* Gold/Yellow */
+    --teal: 175 70% 45%;        /* Teal/Turquoise */
+    --brown: 20 55% 35%;        /* Brown */
+    --light-green: 90 50% 80%;  /* Light Green */
+    --cream: 40 50% 90%;        /* Cream/Off-white */
+    --white: 0 0% 100%;         /* White */
+    
+    /* UI elements mapped to Palmar colors */
+    --card: 40 50% 95%;
+    --card-foreground: 20 30% 25%;
+    --popover: 40 50% 95%;
+    --popover-foreground: 20 30% 25%;
+    --primary: 35 100% 60%;      /* Orange as primary */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 175 70% 45%;    /* Teal as secondary */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 40 50% 90%;
+    --muted-foreground: 20 40% 35%;
+    --accent: 5 75% 55%;         /* Red as accent */
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 40 30% 97%;
-    --border: 30 30% 85%;
-    --input: 30 30% 85%;
-    --ring: 155 60% 45%;
-    --chart-1: 345 80% 50%;
-    --chart-2: 155 60% 45%;
-    --chart-3: 30 90% 55%;
-    --chart-4: 200 80% 50%;
-    --chart-5: 270 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 45 80% 65%;        /* Gold for borders */
+    --input: 40 50% 90%;
+    --ring: 175 70% 45%;         /* Teal for focus rings */
+    
+    /* Chart colors */
+    --chart-1: 35 100% 60%;      /* Orange */
+    --chart-2: 5 75% 55%;        /* Red */
+    --chart-3: 45 80% 65%;       /* Gold */
+    --chart-4: 175 70% 45%;      /* Teal */
+    --chart-5: 20 55% 35%;       /* Brown */
+    
     --radius: 0.5rem;
-    --sidebar-background: 35 25% 96%;
-    --sidebar-foreground: 175 80% 20%;
-    --sidebar-primary: 345 80% 50%;
-    --sidebar-primary-foreground: 40 30% 97%;
-    --sidebar-accent: 155 60% 45%;
-    --sidebar-accent-foreground: 40 30% 97%;
-    --sidebar-border: 30 30% 85%;
-    --sidebar-ring: 345 80% 50%;
+    
+    /* Sidebar styling */
+    --sidebar-background: 180 30% 92%;
+    --sidebar-foreground: 20 30% 25%;
+    --sidebar-primary: 35 100% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 5 75% 55%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 45 80% 65%;
+    --sidebar-ring: 35 100% 60%;
   }
+  
   .dark {
-    --background: 175 60% 15%;
+    --background: 20 30% 10%;
     --foreground: 40 30% 97%;
-    --card: 180 50% 18%;
+    
+    /* Dark mode variants of Palmar colors */
+    --card: 20 20% 15%;
     --card-foreground: 40 30% 97%;
-    --popover: 180 50% 18%;
+    --popover: 20 20% 15%;
     --popover-foreground: 40 30% 97%;
-    --primary: 345 80% 50%;
-    --primary-foreground: 40 30% 97%;
-    --secondary: 155 60% 45%;
-    --secondary-foreground: 40 30% 97%;
-    --muted: 180 30% 25%;
+    --primary: 35 85% 55%;      /* Slightly muted orange for dark mode */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 175 60% 40%;   /* Slightly muted teal for dark mode */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 20 20% 20%;
     --muted-foreground: 40 20% 80%;
-    --accent: 30 90% 55%;
-    --accent-foreground: 40 30% 97%;
+    --accent: 5 65% 50%;        /* Slightly muted red for dark mode */
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 40 30% 97%;
-    --border: 185 40% 30%;
-    --input: 185 40% 30%;
-    --ring: 155 60% 45%;
-    --chart-1: 345 80% 50%;
-    --chart-2: 155 60% 45%;
-    --chart-3: 30 90% 55%;
-    --chart-4: 200 80% 50%;
-    --chart-5: 270 70% 60%;
-    --sidebar-background: 180 50% 18%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 45 70% 55%;       /* Slightly muted gold for dark mode */
+    --input: 20 20% 20%;
+    --ring: 175 60% 40%;
+    
+    /* Chart colors for dark mode */
+    --chart-1: 35 85% 55%;
+    --chart-2: 5 65% 50%;
+    --chart-3: 45 70% 55%;
+    --chart-4: 175 60% 40%;
+    --chart-5: 20 40% 30%;
+    
+    /* Sidebar styling for dark mode */
+    --sidebar-background: 20 20% 15%;
     --sidebar-foreground: 40 30% 97%;
-    --sidebar-primary: 345 80% 50%;
-    --sidebar-primary-foreground: 40 30% 97%;
-    --sidebar-accent: 155 60% 45%;
-    --sidebar-accent-foreground: 40 30% 97%;
-    --sidebar-border: 185 40% 30%;
-    --sidebar-ring: 345 80% 50%;
+    --sidebar-primary: 35 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 5 65% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 45 70% 55%;
+    --sidebar-ring: 35 85% 55%;
   }
 }
 
@@ -91,6 +116,17 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Palmar textures and patterns */
+.palmar-pattern-gold {
+  background-image: url('/textures/palmar-pattern-gold.svg');
+  background-repeat: repeat;
+}
+
+.palmar-pattern-red {
+  background-image: url('/textures/palmar-pattern-red.svg');
+  background-repeat: repeat;
 }
 
 @keyframes shimmer {

@@ -60,7 +60,18 @@ const config: Config = {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
-  			}
+  			},
+        /* Palmar specific colors */
+        palmar: {
+          orange: 'hsl(var(--orange))',
+          red: 'hsl(var(--red))',
+          gold: 'hsl(var(--gold))',
+          teal: 'hsl(var(--teal))',
+          brown: 'hsl(var(--brown))',
+          'light-green': 'hsl(var(--light-green))',
+          cream: 'hsl(var(--cream))',
+          white: 'hsl(var(--white))',
+        }
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -91,13 +102,48 @@ const config: Config = {
           '100%': {
             transform: 'translateX(100%)'
           }
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        "pulse-subtle": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.8" },
+        },
+        twinkle: {
+          "0%, 100%": { opacity: "0.2" },
+          "50%": { opacity: "1" },
+        },
+        "gradient-1": {
+          "0%": { background: "radial-gradient(circle at 30% 30%, rgba(242, 157, 42, 0.4) 0%, transparent 40%)" },
+          "25%": { background: "radial-gradient(circle at 30% 30%, rgba(193, 62, 56, 0.3) 0%, transparent 40%)" },
+          "50%": { background: "radial-gradient(circle at 30% 30%, rgba(214, 179, 85, 0.5) 0%, transparent 40%)" },
+          "75%": { background: "radial-gradient(circle at 30% 30%, rgba(48, 181, 174, 0.4) 0%, transparent 40%)" },
+          "100%": { background: "radial-gradient(circle at 30% 30%, rgba(242, 157, 42, 0.4) 0%, transparent 40%)" }
+        },
+        "gradient-2": {
+          "0%": { background: "radial-gradient(circle at 70% 70%, rgba(48, 181, 174, 0.4) 0%, transparent 40%)" },
+          "25%": { background: "radial-gradient(circle at 70% 70%, rgba(242, 157, 42, 0.4) 0%, transparent 40%)" },
+          "50%": { background: "radial-gradient(circle at 70% 70%, rgba(193, 62, 56, 0.3) 0%, transparent 40%)" },
+          "75%": { background: "radial-gradient(circle at 70% 70%, rgba(214, 179, 85, 0.5) 0%, transparent 40%)" },
+          "100%": { background: "radial-gradient(circle at 70% 70%, rgba(48, 181, 174, 0.4) 0%, transparent 40%)" }
         }
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
-        'shimmer': 'shimmer 2s infinite'
-  		}
+        'shimmer': 'shimmer 2s infinite',
+        float: "float 6s ease-in-out infinite",
+        "pulse-subtle": "pulse-subtle 3s ease-in-out infinite",
+        twinkle: "twinkle 3s ease-in-out infinite",
+        "gradient-1": "gradient-1 10s ease-in-out infinite",
+        "gradient-2": "gradient-2 8s ease-in-out infinite"
+  		},
+      backgroundImage: {
+        'palmar-pattern-gold': "url('/textures/palmar-pattern-gold.svg')",
+        'palmar-pattern-red': "url('/textures/palmar-pattern-red.svg')"
+      }
   	}
   },
   plugins: [require("tailwindcss-animate")],

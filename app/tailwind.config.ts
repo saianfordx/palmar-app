@@ -20,12 +20,12 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#FF6B35", // Vibrant orange
-          foreground: "#FFFFFF",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#F7B538", // Golden yellow
-          foreground: "#1A1A1A",
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -36,8 +36,8 @@ const config = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "#C73E1D", // Deep red
-          foreground: "#FFFFFF",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -47,17 +47,16 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        tropical: {
-          orange: "#FF6B35",
-          yellow: "#F7B538",
-          gold: "#F9C846",
-          red: "#C73E1D",
-          darkred: "#8B2E15",
-          turquoise: "#2EC4B6",
-          lightturquoise: "#7FDFD4",
-          coral: "#FF9F68",
-          sand: "#F2D0A4",
-          jungle: "#1E8040",
+        /* Palmar specific colors */
+        palmar: {
+          orange: "hsl(var(--orange))",
+          red: "hsl(var(--red))",
+          gold: "hsl(var(--gold))",
+          teal: "hsl(var(--teal))",
+          brown: "hsl(var(--brown))",
+          "light-green": "hsl(var(--light-green))",
+          cream: "hsl(var(--cream))",
+          white: "hsl(var(--white))",
         },
       },
       borderRadius: {
@@ -90,8 +89,8 @@ const config = {
         "pulse-subtle": "pulse-subtle 3s ease-in-out infinite",
       },
       backgroundImage: {
-        "mayan-pattern":
-          "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F7B538' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+        "palmar-pattern-gold": "url('/textures/palmar-pattern-gold.svg')",
+        "palmar-pattern-red": "url('/textures/palmar-pattern-red.svg')",
       },
     },
   },
