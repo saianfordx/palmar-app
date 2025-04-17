@@ -1,0 +1,111 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1000" height="1000">
+  <metadata>
+    Mayan Glyphs SVG Font - Decorative elements for Palmar App
+    Created for use in styling with Mayan/tribal aesthetic
+  </metadata>
+  
+  <!-- Mayan Sun Symbol -->
+  <symbol id="mayan-sun" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="25" fill="currentColor" />
+    <circle cx="50" cy="50" r="15" fill="transparent" stroke="currentColor" stroke-width="2" />
+    
+    <!-- Sun rays -->
+    <path d="M50 10L50 0" stroke="currentColor" stroke-width="2" />
+    <path d="M50 100L50 90" stroke="currentColor" stroke-width="2" />
+    <path d="M10 50L0 50" stroke="currentColor" stroke-width="2" />
+    <path d="M100 50L90 50" stroke="currentColor" stroke-width="2" />
+    
+    <path d="M22 22L15 15" stroke="currentColor" stroke-width="2" />
+    <path d="M78 22L85 15" stroke="currentColor" stroke-width="2" />
+    <path d="M22 78L15 85" stroke="currentColor" stroke-width="2" />
+    <path d="M78 78L85 85" stroke="currentColor" stroke-width="2" />
+  </symbol>
+  
+  <!-- Mayan Stepped Pattern -->
+  <symbol id="mayan-steps" viewBox="0 0 100 20">
+    <path d="M0 20H10V15H20V10H30V5H40V0H60V5H70V10H80V15H90V20H100" fill="none" stroke="currentColor" stroke-width="2" />
+  </symbol>
+  
+  <!-- Mayan Geometric Border -->
+  <symbol id="mayan-border" viewBox="0 0 100 10">
+    <path d="M0 10L10 0L20 10L30 0L40 10L50 0L60 10L70 0L80 10L90 0L100 10" fill="none" stroke="currentColor" stroke-width="2" />
+  </symbol>
+  
+  <!-- Mayan Dot Pattern -->
+  <symbol id="mayan-dots" viewBox="0 0 100 10">
+    <circle cx="10" cy="5" r="3" fill="currentColor" />
+    <circle cx="30" cy="5" r="3" fill="currentColor" />
+    <circle cx="50" cy="5" r="3" fill="currentColor" />
+    <circle cx="70" cy="5" r="3" fill="currentColor" />
+    <circle cx="90" cy="5" r="3" fill="currentColor" />
+  </symbol>
+  
+  <!-- Mayan Square Spiral -->
+  <symbol id="mayan-spiral" viewBox="0 0 100 100">
+    <path d="M30 30H70V70H40V40H60V60H50V50" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" />
+  </symbol>
+  
+  <!-- Mayan Eye -->
+  <symbol id="mayan-eye" viewBox="0 0 100 60">
+    <path d="M10 30C20 10 40 0 50 0C60 0 80 10 90 30C80 50 60 60 50 60C40 60 20 50 10 30Z" fill="none" stroke="currentColor" stroke-width="3" />
+    <circle cx="50" cy="30" r="15" fill="currentColor" />
+    <circle cx="45" cy="25" r="5" fill="white" />
+  </symbol>
+  
+  <!-- Mayan Diamond -->
+  <symbol id="mayan-diamond" viewBox="0 0 100 100">
+    <path d="M50 10L90 50L50 90L10 50Z" fill="none" stroke="currentColor" stroke-width="3" />
+    <path d="M50 30L70 50L50 70L30 50Z" fill="currentColor" />
+  </symbol>
+  
+  <!-- Mayan Zigzag -->
+  <symbol id="mayan-zigzag" viewBox="0 0 100 40">
+    <path d="M0 20L20 0L40 40L60 0L80 40L100 20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  </symbol>
+  
+  <!-- Mayan Corner -->
+  <symbol id="mayan-corner" viewBox="0 0 100 100">
+    <path d="M0 0V80H80" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="square" />
+    <path d="M20 60V20H60" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" />
+    <circle cx="60" cy="20" r="5" fill="currentColor" />
+    <circle cx="20" cy="60" r="5" fill="currentColor" />
+  </symbol>
+  
+  <!-- Mayan Feathered Serpent -->
+  <symbol id="mayan-serpent" viewBox="0 0 200 100">
+    <path d="M20 50C40 30 60 30 80 50C100 70 120 70 140 50C160 30 180 30 200 50" fill="none" stroke="currentColor" stroke-width="4" />
+    <path d="M20 30C40 10 60 10 80 30" fill="none" stroke="currentColor" stroke-width="2" />
+    <path d="M20 70C40 90 60 90 80 70" fill="none" stroke="currentColor" stroke-width="2" />
+    <path d="M120 30C140 10 160 10 180 30" fill="none" stroke="currentColor" stroke-width="2" />
+    <path d="M120 70C140 90 160 90 180 70" fill="none" stroke="currentColor" stroke-width="2" />
+    <circle cx="80" cy="50" r="5" fill="currentColor" />
+    <circle cx="140" cy="50" r="5" fill="currentColor" />
+    <circle cx="20" cy="50" r="5" fill="currentColor" />
+    <circle cx="200" cy="50" r="5" fill="currentColor" />
+  </symbol>
+  
+  <!-- Mayan Calendar Glyph -->
+  <symbol id="mayan-calendar" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="3" />
+    <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="1" />
+    <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="1" />
+    <circle cx="50" cy="50" r="10" fill="currentColor" />
+    
+    <path d="M50 10L50 20" stroke="currentColor" stroke-width="2" />
+    <path d="M50 80L50 90" stroke="currentColor" stroke-width="2" />
+    <path d="M10 50L20 50" stroke="currentColor" stroke-width="2" />
+    <path d="M80 50L90 50" stroke="currentColor" stroke-width="2" />
+    
+    <path d="M22 22L28 28" stroke="currentColor" stroke-width="2" />
+    <path d="M78 22L72 28" stroke="currentColor" stroke-width="2" />
+    <path d="M22 78L28 72" stroke="currentColor" stroke-width="2" />
+    <path d="M78 78L72 72" stroke="currentColor" stroke-width="2" />
+    
+    <circle cx="50" cy="25" r="3" fill="currentColor" />
+    <circle cx="50" cy="75" r="3" fill="currentColor" />
+    <circle cx="25" cy="50" r="3" fill="currentColor" />
+    <circle cx="75" cy="50" r="3" fill="currentColor" />
+  </symbol>
+</svg> 

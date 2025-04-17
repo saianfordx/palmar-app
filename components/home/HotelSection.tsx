@@ -3,8 +3,9 @@
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Star, UtensilsCrossed } from "lucide-react"
+import { Star } from "lucide-react"
 import { useState, useEffect } from "react"
+import { MayanHeading } from "@/components/ui/mayan-heading"
 
 // Mayan-styled icons as SVG components
 const MayanPalmIcon = () => (
@@ -217,18 +218,14 @@ export const HotelSection = () => {
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className={`text-center mb-12 transition-all duration-1000 ease-out ${
+        <div className={`transition-all duration-1000 ease-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <Badge className="bg-[#e05d4d] text-white mb-4 px-4 py-1.5 text-sm font-medium">
-            Alojamiento
-          </Badge>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-3">
-            Royalton Riviera Cancun
-          </h2>
-          <div className="w-32 h-1 bg-[#f5a74d] mx-auto relative">
-            <div className="absolute -inset-y-1 -inset-x-4 bg-[#f5a74d]/30 filter blur-sm"></div>
-          </div>
+          <MayanHeading 
+            badge="Alojamiento" 
+            title="Royalton Riviera Cancun" 
+            size="xl"
+          />
         </div>
 
         <div className="grid md:grid-cols-12 gap-12 items-center">
@@ -264,7 +261,7 @@ export const HotelSection = () => {
                   </p>
                 </div>
 
-                <h4 className="font-semibold text-[#f5a74d] text-lg mb-5 flex items-center">
+                <h4 className="font-semibold text-[#f5a74d] text-lg mb-5 flex items-center text-mayan">
                   <span className="mr-2">Servicios destacados</span>
                   <div className="h-px flex-grow bg-gradient-to-r from-[#f5a74d]/70 to-transparent ml-3"></div>
                 </h4>
@@ -275,7 +272,7 @@ export const HotelSection = () => {
                       <MayanBuildingIcon />
                     </div>
                     <div>
-                      <h4 className="font-medium text-white">Dreambed™</h4>
+                      <h4 className="font-medium text-white text-mayan">Dreambed™</h4>
                       <p className="text-sm text-gray-400">Diseñada exclusivamente para Royalton Resorts</p>
                     </div>
                   </div>
@@ -285,7 +282,7 @@ export const HotelSection = () => {
                       <MayanDrinkIcon />
                     </div>
                     <div>
-                      <h4 className="font-medium text-white">Bares</h4>
+                      <h4 className="font-medium text-white text-mayan">Bares</h4>
                       <p className="text-sm text-gray-400">Bebidas internacionales en 13 bares</p>
                     </div>
                   </div>
@@ -295,7 +292,7 @@ export const HotelSection = () => {
                       <MayanConnectivityIcon />
                     </div>
                     <div>
-                      <h4 className="font-medium text-white">All in Connectivity™</h4>
+                      <h4 className="font-medium text-white text-mayan">All in Connectivity™</h4>
                       <p className="text-sm text-gray-400">Wi-Fi gratis y estaciones de carga USB</p>
                     </div>
                   </div>
@@ -305,16 +302,16 @@ export const HotelSection = () => {
                       <MayanWavesIcon />
                     </div>
                     <div>
-                      <h4 className="font-medium text-white">Piscinas</h4>
+                      <h4 className="font-medium text-white text-mayan">Piscinas</h4>
                       <p className="text-sm text-gray-400">10 piscinas y parque acuático</p>
                     </div>
                   </div>
                 </div>
                 
-                <div className="mt-6 p-4 rounded-xl bg-[#2acbab]/10 border border-[#2acbab]/20">
+                <div className="mt-6 p-4 rounded-xl bg-[#2acbab]/10 border border-[#2acbab]/20 border-mayan">
                   <div className="flex items-center mb-2">
                     <MayanLocationIcon className="h-5 w-5 text-[#2acbab] mr-2" />
-                    <h4 className="font-medium text-white">Riviera Maya, México</h4>
+                    <h4 className="font-medium text-white text-mayan">Riviera Maya, México</h4>
                   </div>
                   <p className="text-sm text-gray-400 pl-7">A solo 15 minutos del Aeropuerto Internacional de Cancún (CUN)</p>
                 </div>
@@ -344,9 +341,9 @@ export const HotelSection = () => {
                   <div className="absolute bottom-0 left-0 right-0 bg-black/70 backdrop-blur-sm p-4 flex justify-between items-center">
                     <div className="flex items-center">
                       <MayanFoodIcon className="h-5 w-5 text-[#2acbab] mr-2" />
-                      <span className="text-white text-sm">9 restaurantes de especialidad</span>
+                      <span className="text-white text-sm text-mayan">9 restaurantes de especialidad</span>
                     </div>
-                    <Badge className="bg-[#2acbab]/80 hover:bg-[#2acbab] text-white">All-Inclusive</Badge>
+                    <Badge className="bg-[#2acbab]/80 hover:bg-[#2acbab] text-white text-mayan">All-Inclusive</Badge>
                   </div>
                 </div>
               </div>

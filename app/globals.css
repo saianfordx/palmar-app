@@ -2,6 +2,117 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mayan-inspired font */
+@font-face {
+  font-family: 'MayanGlyphs';
+  src: url('/fonts/MayanGlyphs.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Tribal/Mayan styled text classes */
+.text-mayan {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px rgba(245, 167, 77, 0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.text-mayan-heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1.5px rgba(245, 167, 77, 0.7);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* Add decorative elements to mayan text */
+.text-mayan-heading::before,
+.text-mayan-heading::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(245, 167, 77, 0.6), transparent);
+  left: 0;
+  right: 0;
+  transform: scaleX(0.8);
+}
+
+.text-mayan-heading::before {
+  top: -8px;
+}
+
+.text-mayan-heading::after {
+  bottom: -8px;
+}
+
+/* Mayan decorative dots for text */
+.text-mayan-decorated {
+  position: relative;
+  display: inline-block;
+  padding: 0 15px;
+}
+
+.text-mayan-decorated::before,
+.text-mayan-decorated::after {
+  content: "•";
+  color: rgba(245, 167, 77, 0.8);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+}
+
+.text-mayan-decorated::before {
+  left: -6px;
+}
+
+.text-mayan-decorated::after {
+  right: -6px;
+}
+
+/* Mayan border patterns for text containers */
+.border-mayan {
+  position: relative;
+  border: 1px solid rgba(245, 167, 77, 0.3);
+  border-radius: 4px;
+  background-image: url('/textures/mayan-text-pattern.svg');
+  background-size: 150px;
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+  background-position: center;
+  background-color: rgba(245, 167, 77, 0.05);
+}
+
+/* Mayan angular pattern borders */
+.border-mayan-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.border-mayan-pattern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 8px,
+    rgba(245, 167, 77, 0.6) 8px,
+    rgba(245, 167, 77, 0.6) 16px,
+    rgba(224, 93, 77, 0.6) 16px,
+    rgba(224, 93, 77, 0.6) 24px
+  );
+}
+
 body {
   font-family: 'Poppins', sans-serif;
 }

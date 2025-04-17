@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+  <defs>
+    <pattern id="mayan-pattern" width="150" height="150" patternUnits="userSpaceOnUse">
+      <!-- Background -->
+      <rect width="150" height="150" fill="transparent"/>
+      
+      <!-- Zig-zag border pattern -->
+      <path d="M0 0L10 10L20 0L30 10L40 0L50 10L60 0L70 10L80 0L90 10L100 0L110 10L120 0L130 10L140 0L150 10" 
+            stroke="#f5a74d" stroke-width="1" stroke-opacity="0.2" fill="none"/>
+      
+      <path d="M0 150L10 140L20 150L30 140L40 150L50 140L60 150L70 140L80 150L90 140L100 150L110 140L120 150L130 140L140 150L150 140" 
+            stroke="#f5a74d" stroke-width="1" stroke-opacity="0.2" fill="none"/>
+      
+      <!-- Vertical line pattern -->
+      <path d="M0 15L0 135M150 15L150 135" stroke="#f5a74d" stroke-width="1" stroke-opacity="0.1" stroke-dasharray="5,10"/>
+      
+      <!-- Corner decorative elements -->
+      <path d="M15 15L35 15L35 35L15 35Z" stroke="#f5a74d" stroke-width="1" stroke-opacity="0.3" fill="none"/>
+      <path d="M115 15L135 15L135 35L115 35Z" stroke="#f5a74d" stroke-width="1" stroke-opacity="0.3" fill="none"/>
+      <path d="M15 115L35 115L35 135L15 135Z" stroke="#f5a74d" stroke-width="1" stroke-opacity="0.3" fill="none"/>
+      <path d="M115 115L135 115L135 135L115 135Z" stroke="#f5a74d" stroke-width="1" stroke-opacity="0.3" fill="none"/>
+      
+      <!-- Center decorative dot patterns -->
+      <circle cx="75" cy="75" r="20" stroke="#f5a74d" stroke-width="1" stroke-opacity="0.3" fill="none"/>
+      <circle cx="75" cy="75" r="15" stroke="#f5a74d" stroke-width="1" stroke-opacity="0.2" fill="none"/>
+      <circle cx="75" cy="75" r="5" fill="#f5a74d" fill-opacity="0.15"/>
+      
+      <!-- Diagonal dot patterns -->
+      <circle cx="25" cy="25" r="2" fill="#f5a74d" fill-opacity="0.2"/>
+      <circle cx="125" cy="25" r="2" fill="#f5a74d" fill-opacity="0.2"/>
+      <circle cx="25" cy="125" r="2" fill="#f5a74d" fill-opacity="0.2"/>
+      <circle cx="125" cy="125" r="2" fill="#f5a74d" fill-opacity="0.2"/>
+      
+      <!-- Angular Mayan patterns -->
+      <path d="M50 50L65 50L65 65L50 65Z" stroke="#f5a74d" stroke-width="1" stroke-opacity="0.2" fill="none"/>
+      <path d="M85 50L100 50L100 65L85 65Z" stroke="#f5a74d" stroke-width="1" stroke-opacity="0.2" fill="none"/>
+      <path d="M50 85L65 85L65 100L50 100Z" stroke="#f5a74d" stroke-width="1" stroke-opacity="0.2" fill="none"/>
+      <path d="M85 85L100 85L100 100L85 100Z" stroke="#f5a74d" stroke-width="1" stroke-opacity="0.2" fill="none"/>
+      
+      <!-- Small pyramid symbols -->
+      <path d="M25 65L30 55L35 65H25Z" fill="#f5a74d" fill-opacity="0.15"/>
+      <path d="M115 65L120 55L125 65H115Z" fill="#f5a74d" fill-opacity="0.15"/>
+      <path d="M25 85L30 95L35 85H25Z" fill="#f5a74d" fill-opacity="0.15"/>
+      <path d="M115 85L120 95L125 85H115Z" fill="#f5a74d" fill-opacity="0.15"/>
+    </pattern>
+  </defs>
+  
+  <rect width="150" height="150" fill="url(#mayan-pattern)" />
+</svg> 
