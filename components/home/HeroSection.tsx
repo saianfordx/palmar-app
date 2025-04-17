@@ -144,7 +144,7 @@ export const HeroSection = () => {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/p2.png"
+          src="/maya2.png"
           alt="Pal' Mar - Evento exclusivo"
           fill
           className={`object-cover brightness-[0.6] scale-110 transition-transform duration-10000 ${isLoaded ? 'scale-100' : 'scale-110'}`}
