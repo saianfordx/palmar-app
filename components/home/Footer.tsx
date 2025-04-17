@@ -56,7 +56,7 @@ export const Footer = () => {
         >
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <PalmarLogo variant="cream" size="sm" />
+             
             </div>
             <p className="text-palmar-gold mb-4">
               Una experiencia exclusiva Pal'Mar 2025.

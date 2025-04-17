@@ -59,7 +59,7 @@ export const Navbar = () => {
     >
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <PalmarLogo variant="white" size="sm" />
+     
         </div>
         <nav className="hidden md:flex space-x-8">
           <Link href="#acerca" className="hover:text-[#ffd863] transition-colors text-white font-medium">
