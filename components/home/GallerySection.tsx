@@ -42,7 +42,7 @@ const AnimatedGradients = () => {
 // Image gallery data
 const galleryImages = [
   {
-    src: "/pm1.jpg",
+    src: "/talsk.png",
     alt: "The Sandbox",
     caption: "The Sandbox",
   },
@@ -52,9 +52,9 @@ const galleryImages = [
     caption: "Team Building",
   },
   {
-    src: "/cena.png",
-    alt: "Celebración",
-    caption: "Celebración",
+    src: "/actividad.png",
+    alt: "Actividades",
+    caption: "Actividades",
   },
   {
     src: "/tb1.png",
