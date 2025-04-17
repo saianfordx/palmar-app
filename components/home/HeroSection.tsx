@@ -139,7 +139,7 @@ export const HeroSection = () => {
     <section 
       ref={sectionRef}
       id="hero" 
-      className="relative h-[100vh] flex items-center justify-center text-white overflow-hidden"
+      className="relative min-h-[100svh] flex items-center justify-center text-white"
     >
       {/* Background image */}
       <div className="absolute inset-0 z-0">
@@ -233,22 +233,13 @@ export const HeroSection = () => {
           En la Cúspide de la Innovación, con la Fuerza de Nuestro Legado
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" variant="palmarOrange" className="text-base backdrop-blur-sm bg-orange-500/90 border-orange-400/50 shadow-lg hover:shadow-orange-500/20 transition-all hover:-translate-y-1">
-              <a href="#registro" className="flex items-center gap-2">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-10">
+            <Button size="lg" variant="palmarOrange" className="text-base backdrop-blur-sm bg-orange-500/90 border-orange-400/50 shadow-lg hover:shadow-orange-500/20 transition-all hover:-translate-y-1 py-6 px-8">
+              <a href="#registro" className="flex items-center gap-2 w-full h-full">
                 <Sparkles className="h-5 w-5" />
                 <span>Quiero asistir</span>
               </a>
             </Button>
-          </div>
-          
-          <div className="mt-16 md:mt-20 flex justify-center">
-            <a 
-              href="#acerca" 
-              className="animate-bounce bg-white/10 p-3 rounded-full backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors"
-            >
-              <ChevronDown className="h-5 w-5 text-white" />
-            </a>
           </div>
         </div>
       </div>

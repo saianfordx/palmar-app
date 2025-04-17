@@ -17,7 +17,10 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <HeroSection />
+     
+      <HeroSection  />
+     
+    
       {/* <ElementsSection /> */}
       {/* <Air /> */}
       <Elements2Section />

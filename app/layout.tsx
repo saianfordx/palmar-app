@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Poppins } from "next/font/google"
 import "../styles/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -16,6 +16,14 @@ export const metadata: Metadata = {
   description:
     "Pal' Mar es un evento exclusivo que reúne a profesionales y entusiastas en un entorno paradisíaco para compartir experiencias, establecer conexiones y disfrutar de momentos únicos.",
     generator: 'v0.dev'
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover"
 }
 
 export default function RootLayout({
