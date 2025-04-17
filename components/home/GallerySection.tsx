@@ -52,12 +52,12 @@ const galleryImages = [
     caption: "Team Building",
   },
   {
-    src: "/pm2.jpg",
+    src: "/cena.png",
     alt: "Cena de gala",
     caption: "Cena de gala",
   },
   {
-    src: "/tb1.jpg",
+    src: "/tb1.png",
     alt: "Team Building",
     caption: "Team Building",
   },

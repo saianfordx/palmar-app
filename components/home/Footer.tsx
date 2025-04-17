@@ -59,19 +59,8 @@ export const Footer = () => {
               <PalmarLogo variant="cream" size="sm" />
             </div>
             <p className="text-palmar-gold mb-4">
-              Una experiencia exclusiva en la Riviera Maya para celebrar, conectar y disfrutar.
+              Una experiencia exclusiva Pal'Mar 2025.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-palmar-cream hover:text-palmar-gold transition-colors">
-                <Instagram className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-palmar-cream hover:text-palmar-gold transition-colors">
-                <Facebook className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-palmar-cream hover:text-palmar-gold transition-colors">
-                <Twitter className="h-6 w-6" />
-              </a>
-            </div>
           </div>
 
           <div>
@@ -115,15 +104,19 @@ export const Footer = () => {
             <ul className="space-y-3 text-palmar-gold">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-2 mt-0.5 shrink-0 text-palmar-teal" />
-                <span>Riviera Maya, México</span>
+                <span>Cancún, México</span>
               </li>
               <li className="flex items-start">
                 <Mail className="h-5 w-5 mr-2 mt-0.5 shrink-0 text-palmar-teal" />
-                <span>info@palmar-evento.com</span>
+                <span>tsanchez@arkusnexus.com</span>
               </li>
               <li className="flex items-start">
-                <Phone className="h-5 w-5 mr-2 mt-0.5 shrink-0 text-palmar-teal" />
-                <span>+52 (999) 123-4567</span>
+                <Mail className="h-5 w-5 mr-2 mt-0.5 shrink-0 text-palmar-teal" />
+                <span>ghernandez@arkusnexus.com</span>
+              </li>
+              <li className="flex items-start">
+                <Mail className="h-5 w-5 mr-2 mt-0.5 shrink-0 text-palmar-teal" />
+                <span>amado@arkusnexus.com</span>
               </li>
             </ul>
           </div>
@@ -131,7 +124,7 @@ export const Footer = () => {
 
         <div className="border-t border-palmar-gold/30 mt-8 pt-8 text-center text-palmar-gold">
           <p className="transition-all duration-1000 ease-out" style={{ transitionDelay: '500ms' }}>
-            © 2025 Pal&apos; Mar. Todos los derechos reservados.
+            © 2025 Pal&apos; Mar.
           </p>
         </div>
       </div>
