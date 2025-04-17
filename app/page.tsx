@@ -16,11 +16,11 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <HeroSection />
+      <ElementsSection />
       <AboutSection />
       <HotelSection />
       <TravelInfoSection />
       {/* <AgendaSection /> */}
-      <ElementsSection />
       <GallerySection />
       <RegistrationSection />
       <Footer />
