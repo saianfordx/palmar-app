@@ -149,7 +149,7 @@ export const HeroSection = () => {
           fill
           className={`object-cover brightness-[0.6] scale-110 transition-transform duration-10000 ${isLoaded ? 'scale-100' : 'scale-110'}`}
           priority
-          onLoadingComplete={() => setIsLoaded(true)}
+          onLoad={() => setIsLoaded(true)}
         />
         <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
       </div>
@@ -231,30 +231,18 @@ export const HeroSection = () => {
                 <span>Quiero asistir</span>
               </a>
             </Button>
-            
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-base border-white/40 text-white backdrop-blur-sm hover:bg-white/10 shadow-lg transition-all hover:-translate-y-1"
-            >
-              <a href="#agenda" className="flex items-center gap-2">
-                <Calendar className="h-5 w-5" />
-                <span>Ver agenda</span>
-              </a>
-            </Button>
           </div>
           
           <div className="mt-16 md:mt-20 flex justify-center">
             <a 
               href="#acerca" 
               className="animate-bounce bg-white/10 p-3 rounded-full backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors"
-              aria-label="Scroll to about section"
             >
-              <ChevronDown className="h-6 w-6" />
+              <ChevronDown className="h-5 w-5 text-white" />
             </a>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 } 
