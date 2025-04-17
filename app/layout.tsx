@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google"
 import "../styles/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { DecorativePattern } from "@/components/ui/decorative-patterns"
+import { BackgroundMusic } from "@/components/BackgroundMusic"
 
 const poppins = Poppins({ 
   weight: ['400', '500', '600', '700'],
@@ -28,6 +29,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <div className="relative min-h-screen">
             <DecorativePattern variant="palmar-gold" className="opacity-10" />
+            <BackgroundMusic src="/myaSong.mp3" />
             {children}
           </div>
         </ThemeProvider>
