@@ -53,8 +53,8 @@ const galleryImages = [
   },
   {
     src: "/cena.png",
-    alt: "Cena de gala",
-    caption: "Cena de gala",
+    alt: "Celebración",
+    caption: "Celebración",
   },
   {
     src: "/tb1.png",
