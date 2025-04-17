@@ -172,20 +172,21 @@ export const HeroSection = () => {
             </div>
           </div> */}
           
-          <div className="mt-10 mb-4">
+          <div className="mt-10">
             <Image
               src="/logo.svg"
               alt="Pal' Mar Logo"
-              width={500}
+              width={900}
               height={180}
               className="mx-auto"
               priority
             />
-          </div>
-          
-          <p className="text-lg md:text-xl font-medium text-white/90 mb-6">
+            <p className="text-lg md:text-xl font-medium text-white/90 mb-6">
             27-29 Junio, 2025
           </p>
+          </div>
+          
+        
           
           <div className="w-24 h-0.5 bg-white mx-auto mb-8 relative"></div>
           
