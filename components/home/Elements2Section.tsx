@@ -81,7 +81,7 @@ export const Elements2Section: React.FC = () => {
               {t('title')}
             </h2> */}
             <p className="text-lg text-gray-300 max-w-3xl">
-              {t('subtitle')}
+            Una experiencia transformadora que te invita a re-conectar con tus raíces, a explorar tu potencial y a construir un futuro lleno de sabiduría y prosperidad.
             </p>
           </div>
               {/* Transform */}
