@@ -34,8 +34,8 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body className={poppins.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <div className="relative min-h-screen">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
+          <div className="relative min-h-[100dvh] w-full pb-[env(safe-area-inset-bottom)] pt-[env(safe-area-inset-top)] pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]">
             <DecorativePattern variant="palmar-gold" className="opacity-10" />
             <BackgroundMusic src="/myaSong.mp3" />
             {children}

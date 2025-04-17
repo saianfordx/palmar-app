@@ -6,77 +6,183 @@ import { Sparkles, Calendar, ChevronDown, Flame, Wind, Droplet, Mountain } from 
 import PalmarLogo from "@/components/ui/palmar-logo"
 import { useEffect, useState, useRef } from "react"
 
-// Animated elemental particles
+// Seeded random number generator for consistent rendering
+function seededRandom(seed: number) {
+  let value = seed;
+  return function() {
+    value = (value * 9301 + 49297) % 233280;
+    return value / 233280;
+  };
+}
+
+// Animated elemental particles - using seeded random values for hydration consistency
 const ElementalParticles = () => {
+  // Use a stable random generator to ensure consistent rendering between server and client
+  const [particles, setParticles] = useState<{
+    fire: Array<{key: string, top: string, left: string, width: string, height: string, color: string, delay: string, duration: string}>,
+    water: Array<{key: string, top: string, right: string, width: string, height: string, color: string, delay: string, duration: string}>,
+    earth: Array<{key: string, bottom: string, left: string, width: string, height: string, color: string, delay: string, duration: string}>,
+    wind: Array<{key: string, bottom: string, right: string, width: string, height: string, color: string, delay: string, duration: string}>,
+  }>({
+    fire: [],
+    water: [],
+    earth: [],
+    wind: []
+  });
+
+  useEffect(() => {
+    // Generate all particles with seeded random once on client-side mount
+    const random = seededRandom(42); // Fixed seed for consistency
+    
+    const fireParticles = Array.from({ length: 30 }).map((_, i) => {
+      const rand1 = random();
+      const rand2 = random();
+      const rand3 = random();
+      const rand4 = random();
+      const rand5 = random();
+      return {
+        key: `fire-${i}`,
+        top: `${60 + rand1 * 40}%`,
+        left: `${rand2 * 30}%`,
+        width: `${Math.max(2, rand3 * 5)}px`,
+        height: `${Math.max(2, rand4 * 5)}px`,
+        color: rand5 > 0.5 ? '#FF5733' : '#FFC300',
+        delay: `${random() * 5}s`,
+        duration: `${4 + random() * 6}s`,
+      };
+    });
+    
+    const waterParticles = Array.from({ length: 30 }).map((_, i) => {
+      const rand1 = random();
+      const rand2 = random();
+      const rand3 = random();
+      const rand4 = random();
+      const rand5 = random();
+      return {
+        key: `water-${i}`,
+        top: `${60 + rand1 * 40}%`,
+        right: `${rand2 * 30}%`,
+        width: `${Math.max(2, rand3 * 5)}px`,
+        height: `${Math.max(2, rand4 * 5)}px`,
+        color: rand5 > 0.5 ? '#33C6FF' : '#337DFF',
+        delay: `${random() * 5}s`,
+        duration: `${4 + random() * 6}s`,
+      };
+    });
+    
+    const earthParticles = Array.from({ length: 30 }).map((_, i) => {
+      const rand1 = random();
+      const rand2 = random();
+      const rand3 = random();
+      const rand4 = random();
+      const rand5 = random();
+      return {
+        key: `earth-${i}`,
+        bottom: `${rand1 * 30}%`,
+        left: `${rand2 * 30}%`,
+        width: `${Math.max(2, rand3 * 5)}px`,
+        height: `${Math.max(2, rand4 * 5)}px`,
+        color: rand5 > 0.5 ? '#8D6E63' : '#7CB342',
+        delay: `${random() * 5}s`,
+        duration: `${4 + random() * 6}s`,
+      };
+    });
+    
+    const windParticles = Array.from({ length: 30 }).map((_, i) => {
+      const rand1 = random();
+      const rand2 = random();
+      const rand3 = random();
+      const rand4 = random();
+      const rand5 = random();
+      return {
+        key: `wind-${i}`,
+        bottom: `${rand1 * 30}%`,
+        right: `${rand2 * 30}%`,
+        width: `${Math.max(1, rand3 * 3)}px`,
+        height: `${Math.max(1, rand4 * 3)}px`,
+        color: rand5 > 0.5 ? '#FFFFFF' : '#E0E0E0',
+        delay: `${random() * 5}s`,
+        duration: `${3 + random() * 3}s`,
+      };
+    });
+    
+    setParticles({
+      fire: fireParticles,
+      water: waterParticles,
+      earth: earthParticles,
+      wind: windParticles
+    });
+  }, []);
+
   return (
     <div className="absolute inset-0 overflow-hidden z-[2] pointer-events-none">
       {/* Fire particles (orange/red) */}
-      {Array.from({ length: 30 }).map((_, i) => (
+      {particles.fire.map((particle) => (
         <div
-          key={`fire-${i}`}
+          key={particle.key}
           className="absolute rounded-full animate-float-slow"
           style={{
-            top: `${60 + Math.random() * 40}%`,
-            left: `${Math.random() * 30}%`,
-            width: `${Math.max(2, Math.random() * 5)}px`,
-            height: `${Math.max(2, Math.random() * 5)}px`,
-            backgroundColor: Math.random() > 0.5 ? '#FF5733' : '#FFC300',
-            animationDelay: `${Math.random() * 5}s`,
-            animationDuration: `${4 + Math.random() * 6}s`,
+            top: particle.top,
+            left: particle.left,
+            width: particle.width,
+            height: particle.height,
+            backgroundColor: particle.color,
+            animationDelay: particle.delay,
+            animationDuration: particle.duration,
             opacity: 0.7,
           }}
         />
       ))}
 
       {/* Water particles (blue) */}
-      {Array.from({ length: 30 }).map((_, i) => (
+      {particles.water.map((particle) => (
         <div
-          key={`water-${i}`}
+          key={particle.key}
           className="absolute rounded-full animate-float-slow"
           style={{
-            top: `${60 + Math.random() * 40}%`,
-            right: `${Math.random() * 30}%`,
-            width: `${Math.max(2, Math.random() * 5)}px`,
-            height: `${Math.max(2, Math.random() * 5)}px`,
-            backgroundColor: Math.random() > 0.5 ? '#33C6FF' : '#337DFF',
-            animationDelay: `${Math.random() * 5}s`,
-            animationDuration: `${4 + Math.random() * 6}s`,
+            top: particle.top,
+            right: particle.right,
+            width: particle.width,
+            height: particle.height,
+            backgroundColor: particle.color,
+            animationDelay: particle.delay,
+            animationDuration: particle.duration,
             opacity: 0.7,
           }}
         />
       ))}
 
       {/* Earth particles (green/brown) */}
-      {Array.from({ length: 30 }).map((_, i) => (
+      {particles.earth.map((particle) => (
         <div
-          key={`earth-${i}`}
+          key={particle.key}
           className="absolute rounded-full animate-float-slow"
           style={{
-            bottom: `${Math.random() * 30}%`,
-            left: `${Math.random() * 30}%`,
-            width: `${Math.max(2, Math.random() * 5)}px`,
-            height: `${Math.max(2, Math.random() * 5)}px`,
-            backgroundColor: Math.random() > 0.5 ? '#8D6E63' : '#7CB342',
-            animationDelay: `${Math.random() * 5}s`,
-            animationDuration: `${4 + Math.random() * 6}s`,
+            bottom: particle.bottom,
+            left: particle.left,
+            width: particle.width,
+            height: particle.height,
+            backgroundColor: particle.color,
+            animationDelay: particle.delay,
+            animationDuration: particle.duration,
             opacity: 0.7,
           }}
         />
       ))}
 
       {/* Wind particles (white/light) */}
-      {Array.from({ length: 30 }).map((_, i) => (
+      {particles.wind.map((particle) => (
         <div
-          key={`wind-${i}`}
+          key={particle.key}
           className="absolute rounded-full animate-float-fast"
           style={{
-            bottom: `${Math.random() * 30}%`,
-            right: `${Math.random() * 30}%`,
-            width: `${Math.max(1, Math.random() * 3)}px`,
-            height: `${Math.max(1, Math.random() * 3)}px`,
-            backgroundColor: Math.random() > 0.5 ? '#FFFFFF' : '#E0E0E0',
-            animationDelay: `${Math.random() * 5}s`,
-            animationDuration: `${3 + Math.random() * 3}s`,
+            bottom: particle.bottom,
+            right: particle.right,
+            width: particle.width,
+            height: particle.height,
+            backgroundColor: particle.color,
+            animationDelay: particle.delay,
+            animationDuration: particle.duration,
             opacity: 0.5,
           }}
         />

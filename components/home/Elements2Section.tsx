@@ -3,10 +3,30 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslations } from '@/lib/i18n';
+import StarryBackground from '@/components/shared/StarryBackground';
+
+// Seeded random number generator for consistent rendering
+function seededRandom(seed: number) {
+  let value = seed;
+  return function() {
+    value = (value * 9301 + 49297) % 233280;
+    return value / 233280;
+  };
+}
 
 export const Elements2Section: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const { t } = useTranslations('elements2');
+  const [stars, setStars] = useState<Array<{
+    key: number;
+    top: string;
+    left: string;
+    width: string;
+    height: string;
+    color: string;
+    animationDelay: string;
+    animationDuration: string;
+  }>>([]);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -24,22 +44,50 @@ export const Elements2Section: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Display stars in the background
-  const StarryBackground = () => {
+  // Generate stars with seeded random on client-side mount
+  useEffect(() => {
+    const random = seededRandom(456); // Fixed seed for consistency
+    
+    const generatedStars = Array.from({ length: 100 }).map((_, i) => {
+      const topRand = random();
+      const leftRand = random();
+      const widthRand = random();
+      const heightRand = random();
+      const colorRand = random();
+      const delayRand = random();
+      const durationRand = random();
+      
+      return {
+        key: i,
+        top: `${topRand * 100}%`,
+        left: `${leftRand * 100}%`,
+        width: `${Math.max(1, widthRand * 3)}px`,
+        height: `${Math.max(1, heightRand * 3)}px`,
+        color: i % 5 === 0 ? '#F29D2A' : i % 7 === 0 ? '#C13E38' : i % 3 === 0 ? '#D6B355' : '#FFFFFF',
+        animationDelay: `${delayRand * 5}s`,
+        animationDuration: `${durationRand * 5 + 3}s`,
+      };
+    });
+    
+    setStars(generatedStars);
+  }, []);
+
+  // Custom StarryBackground component
+  const CustomStarryBackground = () => {
     return (
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 100 }).map((_, i) => (
+        {stars.map((star) => (
           <div
-            key={i}
+            key={star.key}
             className="absolute rounded-full animate-twinkle"
             style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              width: `${Math.max(1, Math.random() * 3)}px`,
-              height: `${Math.max(1, Math.random() * 3)}px`,
-              backgroundColor: i % 5 === 0 ? '#F29D2A' : i % 7 === 0 ? '#C13E38' : i % 3 === 0 ? '#D6B355' : '#FFFFFF',
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${Math.random() * 5 + 3}s`,
+              top: star.top,
+              left: star.left,
+              width: star.width,
+              height: star.height,
+              backgroundColor: star.color,
+              animationDelay: star.animationDelay,
+              animationDuration: star.animationDuration,
             }}
           />
         ))}
@@ -49,7 +97,7 @@ export const Elements2Section: React.FC = () => {
 
   return (
     <section id="elements2-section" className="relative py-24 bg-black min-h-screen flex items-center">
-      <StarryBackground />
+      <CustomStarryBackground />
       
       <div className="container mx-auto px-4">
         <div 
