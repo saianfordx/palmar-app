@@ -311,7 +311,7 @@ export const HotelSection = () => {
                 <div className="mt-6 p-4 rounded-xl bg-[#2acbab]/10 border border-[#2acbab]/20 border-mayan">
                   <div className="flex items-center mb-2">
                     <MayanLocationIcon className="h-5 w-5 text-[#2acbab] mr-2" />
-                    <h4 className="font-medium text-white text-mayan">Riviera Maya, México</h4>
+                    <h4 className="font-medium text-white text-mayan">Cancún, México</h4>
                   </div>
                   <p className="text-sm text-gray-400 pl-7">A solo 15 minutos del Aeropuerto Internacional de Cancún (CUN)</p>
                 </div>
@@ -350,7 +350,7 @@ export const HotelSection = () => {
               
               {/* Additional images gallery */}
               <div className="grid grid-cols-3 gap-3 mt-3">
-                {["/h2.png", "/h3.png", "/h4.png"].map((src, i) => (
+                {["/r1.png", "/s1.png", "/h4.png"].map((src, i) => (
                   <div 
                     key={i} 
                     className="relative rounded-lg overflow-hidden aspect-[4/3] group"

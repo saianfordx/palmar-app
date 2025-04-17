@@ -57,20 +57,12 @@ export const Elements2Section: React.FC = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          {/* Title and Description at the top */}
-          <div className="mb-16 text-center md:text-left">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              {t('title')}
-            </h2>
-            <p className="text-lg text-gray-300 max-w-3xl">
-              {t('subtitle')}
-            </p>
-          </div>
+         
           
           <div className="flex flex-col md:flex-row gap-12">
             {/* Image on the left */}
             <div className="w-full md:w-1/2">
-              <div className="relative h-[500px] w-full">
+              <div className="relative h-[800px] w-full">
                 <Image
                   src="/arbol.png"
                   alt={t('title')}
@@ -83,6 +75,15 @@ export const Elements2Section: React.FC = () => {
             
             {/* Elements on the right */}
             <div className="w-full md:w-1/2 space-y-8">
+             {/* Title and Description at the top */}
+          <div className="mb-16 text-center md:text-left">
+            {/* <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              {t('title')}
+            </h2> */}
+            <p className="text-lg text-gray-300 max-w-3xl">
+              {t('subtitle')}
+            </p>
+          </div>
               {/* Transform */}
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">

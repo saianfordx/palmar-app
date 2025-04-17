@@ -43,33 +43,33 @@ const AnimatedGradients = () => {
 const galleryImages = [
   {
     src: "/pm1.jpg",
-    alt: "Vista aérea del resort",
-    caption: "Vista aérea del resort",
-  },
-  {
-    src: "/pm2.jpg",
-    alt: "Actividades en la playa",
-    caption: "Actividades en la playa",
+    alt: "The Sandbox",
+    caption: "The Sandbox",
   },
   {
     src: "/pm3.jpg",
+    alt: "Team Building",
+    caption: "Team Building",
+  },
+  {
+    src: "/pm2.jpg",
     alt: "Cena de gala",
     caption: "Cena de gala",
   },
   {
     src: "/pm4.jpg",
-    alt: "Piscina infinity",
-    caption: "Piscina infinity",
+    alt: "Team Building",
+    caption: "Team Building",
   },
   {
     src: "/pm5.jpg",
-    alt: "Ceremonia de apertura",
-    caption: "Ceremonia de apertura",
+    alt: "Hospedaje",
+    caption: "Hospedaje",
   },
   {
     src: "/pm6.jpg",
-    alt: "Networking al atardecer",
-    caption: "Networking al atardecer",
+    alt: "Good Vibes",
+    caption: "Good Vibes",
   },
 ];
 

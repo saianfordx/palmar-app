@@ -196,12 +196,8 @@ export const TravelInfoSection = () => {
               </div>
               
               <p className="text-[#6b442d] mb-4 leading-relaxed">
-                El aeropuerto más cercano es el Aeropuerto Internacional de Cancún (CUN), ubicado a aproximadamente 45
+                El aeropuerto más cercano es el Aeropuerto Internacional de Cancún (CUN), ubicado a aproximadamente 15
                 minutos del hotel.
-              </p>
-              <p className="text-[#6b442d] leading-relaxed">
-                Recomendamos reservar vuelos con llegada el 15 de julio antes de las 16:00 hrs y salida el 17 de julio
-                después de las 14:00 hrs.
               </p>
             </CardContent>
           </Card>
@@ -229,10 +225,6 @@ export const TravelInfoSection = () => {
               
               <p className="text-[#6b442d] mb-4 leading-relaxed">
                 Se proporcionará servicio de traslado desde el aeropuerto hasta el hotel para todos los asistentes.
-              </p>
-              <p className="text-[#6b442d] leading-relaxed">
-                Los horarios de los traslados se coordinarán según los vuelos de los participantes. El punto de
-                encuentro será en la Terminal 3, Salida Internacional.
               </p>
             </CardContent>
           </Card>
@@ -266,14 +258,6 @@ export const TravelInfoSection = () => {
                     </svg>
                   </div>
                   <span>Ropa ligera y fresca para el día</span>
-                </li>
-                <li className="flex items-start transform transition-all duration-300 hover:translate-x-1">
-                  <div className="w-6 h-6 flex-shrink-0 flex items-center justify-center text-[#e05d4d] rounded-full bg-[#f5a74d]/10 mr-2 mt-0.5">
-                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                  </div>
-                  <span>Atuendo elegante para la cena de gala</span>
                 </li>
                 <li className="flex items-start transform transition-all duration-300 hover:translate-x-1">
                   <div className="w-6 h-6 flex-shrink-0 flex items-center justify-center text-[#e05d4d] rounded-full bg-[#f5a74d]/10 mr-2 mt-0.5">
