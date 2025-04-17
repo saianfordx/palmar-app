@@ -58,6 +58,12 @@ export const Elements2Section: React.FC = () => {
           }`}
         >
          
+          {/* Title button */}
+          <div className="flex justify-center mb-12">
+            <div className="bg-[#E86F55] text-white py-3 px-12 rounded-full text-2xl font-medium">
+              Objetivo
+            </div>
+          </div>
           
           <div className="flex flex-col md:flex-row gap-12">
             {/* Image on the left */}
@@ -99,7 +105,7 @@ export const Elements2Section: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-1">
-                    Transformar
+                    Transformación
                   </h3>
                   <p className="text-lg text-gray-300">
                    Ritual de iniciación
@@ -120,7 +126,7 @@ export const Elements2Section: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-1">
-                  Desarrollar
+                  Desarrollo
                   </h3>
                   <p className="text-lg text-gray-300">
                   Habilidades y crecimiento.

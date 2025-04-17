@@ -44,13 +44,13 @@ export const RegistrationSection = () => {
           <Badge className="bg-palmar-red text-palmar-white mb-4 px-4 py-1 text-sm font-medium">
             Participa
           </Badge>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-palmar-gold drop-shadow-md">Regístrate Ahora</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-black drop-shadow-md">Regístrate</h2>
           <div className="w-28 h-1 bg-palmar-red mx-auto"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
-          <MayanBorder className="bg-primary-foreground/10 backdrop-blur-sm text-primary-foreground p-6 shadow-md">
-            <h3 className="text-2xl font-semibold mb-4 flex items-center text-palmar-gold">
+        <div className="grid md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto bg-red">
+          <MayanBorder className="bg-palmar-red backdrop-blur-sm text-white p-6 shadow-md">
+            <h3 className="text-2xl font-semibold mb-4 flex items-center text-white">
               <Sparkles className="h-6 w-6 text-palmar-orange mr-3" />
               {registrationText.title}
             </h3>

@@ -168,6 +168,7 @@ export const TravelInfoSection = () => {
             Logística
           </Badge>
           <h2 className="text-3xl md:text-5xl font-bold text-[#6b442d] mb-4">Información de Viaje</h2>
+          <p className="text-xl text-[#e05d4d] font-medium mb-4">27-29 Junio, 2025</p>
           <div className="w-32 h-1 bg-[#f5a74d] mx-auto relative">
             <div className="absolute -inset-y-1 -inset-x-4 bg-[#f5a74d]/30 filter blur-sm"></div>
           </div>
