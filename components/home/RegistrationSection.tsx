@@ -5,8 +5,37 @@ import { Badge } from "@/components/ui/badge"
 import { MayanBorder, DecorativePattern } from "@/components/ui/decorative-patterns"
 import { Sparkles, CheckCircle } from "lucide-react"
 import Link from "next/link"
+import { useEffect, useState } from "react"
+
+interface RegistrationText {
+  title: string;
+  description: string;
+  benefit1: string;
+  benefit2: string;
+  button: string;
+}
 
 export const RegistrationSection = () => {
+  const [registrationText, setRegistrationText] = useState<RegistrationText | null>(null);
+  
+  useEffect(() => {
+    // In a real app, this would be based on user language preference
+    // For now we'll default to Spanish
+    fetch('/locales/es/registration.json')
+      .then(response => response.json())
+      .then(data => setRegistrationText(data))
+      .catch(error => console.error('Error loading localization:', error));
+  }, []);
+
+  if (!registrationText) {
+    return <div className="py-20 bg-primary text-primary-foreground">Loading...</div>;
+  }
+
+  // Parse markdown-style bold text with regex 
+  const parseText = (text: string) => {
+    return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  };
+
   return (
     <section id="registro" className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
       <DecorativePattern variant="palmar-gold" className="opacity-15" color="white" />
@@ -23,19 +52,17 @@ export const RegistrationSection = () => {
           <MayanBorder className="bg-primary-foreground/10 backdrop-blur-sm text-primary-foreground p-6 shadow-md">
             <h3 className="text-2xl font-semibold mb-4 flex items-center text-palmar-gold">
               <Sparkles className="h-6 w-6 text-palmar-orange mr-3" />
-              Quiere ser parte de Pal&apos; Mar
+              {registrationText.title}
             </h3>
-            <p className="mb-6 text-lg">
-              Presiona el botón de "Regístrate Ahora" y haz login con tu cuenta de Arkusnexus en nuestra aplicación "Arkade". Ahí podrás encontrar todos los eventos que tenemos en Arkusnexus incluyendo Palmar.
-            </p>
+            <p className="mb-6 text-lg" dangerouslySetInnerHTML={{ __html: parseText(registrationText.description) }}></p>
             <div className="space-y-5">
               <div className="flex items-start">
                 <CheckCircle className="h-5 w-5 text-palmar-orange mr-3 mt-1 flex-shrink-0" />
-                <p className="text-lg">¡Gana puntos y recompensas por asistir!</p>
+                <p className="text-lg">{registrationText.benefit1}</p>
               </div>
               <div className="flex items-start">
                 <CheckCircle className="h-5 w-5 text-palmar-orange mr-3 mt-1 flex-shrink-0" />
-                <p className="text-lg">¿Qué esperas?</p>
+                <p className="text-lg">{registrationText.benefit2}</p>
               </div>
             </div>
           </MayanBorder>
@@ -45,7 +72,7 @@ export const RegistrationSection = () => {
               <Button 
                 className="bg-black hover:bg-black/80 text-white text-2xl font-bold px-12 py-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 rounded-md"
               >
-                REGISTRATE AHORA
+                {registrationText.button}
               </Button>
             </Link>
           </div>

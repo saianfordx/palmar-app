@@ -57,7 +57,7 @@ const galleryImages = [
     caption: "Cena de gala",
   },
   {
-    src: "/pm4.jpg",
+    src: "/tb1.jpg",
     alt: "Team Building",
     caption: "Team Building",
   },

@@ -176,6 +176,10 @@ export const HeroSection = () => {
             PAL' MAR
           </h1>
           
+          <p className="text-lg md:text-xl font-medium text-white/90 mb-6">
+            27-29 Junio, 2025
+          </p>
+          
           <div className="w-24 h-0.5 bg-white mx-auto mb-8 relative"></div>
           
           {/* Elemental icons in a row - moved below the heading */}
@@ -218,7 +222,7 @@ export const HeroSection = () => {
           </div>
           
           <p className="text-xl md:text-2xl mb-12 max-w-2xl mx-auto text-white/90 leading-relaxed">
-           En la Cuspide de la Innovacion, con la Fuerza de Nuestro Legado
+          En la Cúspide de la Innovación, con la Fuerza de Nuestro Legado
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
