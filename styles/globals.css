@@ -2,8 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
+  min-height: 100%;
+  overscroll-behavior-x: none;
+}
+
+/* Disable pinch zoom */
+:root {
+  height: 100%;
 }
 
 @layer utilities {
@@ -114,7 +127,7 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
   }
 }
 
@@ -246,4 +259,37 @@ body {
 
 .h-dvh {
   height: 100dvh;
+}
+
+/* Custom viewport height */
+.h-screen-custom {
+  height: 100vh; /* Fallback */
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.min-h-screen-custom {
+  min-height: 100vh; /* Fallback */
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Update the fixed container in the layout */
+.h-mobile-screen {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Prevent horizontal scrolling - gentler approach */
+html, body, #__next {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Force all images and media to be responsive */
+img, 
+video, 
+svg, 
+picture, 
+iframe {
+  max-width: 100%;
+  height: auto;
 }
