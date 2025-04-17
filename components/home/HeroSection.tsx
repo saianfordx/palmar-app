@@ -176,9 +176,9 @@ export const HeroSection = () => {
             <Image
               src="/logo.svg"
               alt="Pal' Mar Logo"
+              className="w-full max-w-[900px] h-auto mx-auto"
               width={900}
               height={180}
-              className="mx-auto"
               priority
             />
             <p className="text-lg md:text-xl font-medium text-white/90 mb-6">
