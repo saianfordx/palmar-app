@@ -218,10 +218,7 @@ export const HeroSection = () => {
           </div>
           
           <p className="text-xl md:text-2xl mb-12 max-w-2xl mx-auto text-white/90 leading-relaxed">
-            Una experiencia exclusiva en la Riviera Maya para 
-            <span className="text-orange-300 font-medium"> celebrar</span>, 
-            <span className="text-blue-300 font-medium"> conectar</span> y 
-            <span className="text-emerald-300 font-medium"> disfrutar</span>
+           En la Cuspide de la Innovacion, con la Fuerza de Nuestro Legado
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
