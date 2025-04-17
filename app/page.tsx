@@ -6,9 +6,11 @@ import {
   TravelInfoSection,
   GallerySection,
   ElementsSection,
+  Elements2Section,
   AgendaSection,
   RegistrationSection,
-  Footer
+  Footer,
+  Air
 } from "@/components/home"
 
 export default function HomePage() {
@@ -17,6 +19,8 @@ export default function HomePage() {
       <Navbar />
       <HeroSection />
       <ElementsSection />
+      {/* <Air /> */}
+      <Elements2Section />
       <AboutSection />
       <HotelSection />
       <TravelInfoSection />

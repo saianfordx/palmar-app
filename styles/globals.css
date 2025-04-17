@@ -137,3 +137,62 @@ body {
     transform: translateX(100%);
   }
 }
+
+/* Twinkle animation for star particles */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle ease-in-out infinite;
+}
+
+/* Gradient animations for background effects */
+@keyframes gradient-1 {
+  0% {
+    background-position: 0% 50%;
+    background-size: 200% 200%;
+  }
+  50% {
+    background-position: 100% 50%;
+    background-size: 100% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+    background-size: 200% 200%;
+  }
+}
+
+@keyframes gradient-2 {
+  0% {
+    background-position: 100% 50%;
+    background-size: 100% 100%;
+  }
+  50% {
+    background-position: 0% 50%;
+    background-size: 200% 200%;
+  }
+  100% {
+    background-position: 100% 50%;
+    background-size: 100% 100%;
+  }
+}
+
+.animate-gradient-1 {
+  animation: gradient-1 15s ease infinite;
+  background: radial-gradient(circle, rgba(242, 157, 42, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+  background-size: 200% 200%;
+}
+
+.animate-gradient-2 {
+  animation: gradient-2 25s ease infinite;
+  background: radial-gradient(circle, rgba(193, 62, 56, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+  background-size: 100% 100%;
+}
