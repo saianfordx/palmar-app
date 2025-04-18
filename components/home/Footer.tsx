@@ -102,15 +102,24 @@ export const Footer = () => {
               </li>
               <li className="flex items-start">
                 <Mail className="h-5 w-5 mr-2 mt-0.5 shrink-0 text-palmar-teal" />
-                <span>tsanchez@arkusnexus.com</span>
+                <div>
+                  <p className="font-semibold">Tamara Sánchez</p>
+                  <a href="mailto:tsanchez@arkusnexus.com" className="text-sm hover:underline">tsanchez@arkusnexus.com</a>
+                </div>
               </li>
               <li className="flex items-start">
                 <Mail className="h-5 w-5 mr-2 mt-0.5 shrink-0 text-palmar-teal" />
-                <span>ghernandez@arkusnexus.com</span>
+                <div>
+                  <p className="font-semibold">Geraldine Hernández</p>
+                  <a href="mailto:ghernandez@arkusnexus.com" className="text-sm hover:underline">ghernandez@arkusnexus.com</a>
+                </div>
               </li>
               <li className="flex items-start">
                 <Mail className="h-5 w-5 mr-2 mt-0.5 shrink-0 text-palmar-teal" />
-                <span>amado@arkusnexus.com</span>
+                <div>
+                  <p className="font-semibold">Amado García</p>
+                  <a href="mailto:amado@arkusnexus.com" className="text-sm hover:underline">amado@arkusnexus.com</a>
+                </div>
               </li>
             </ul>
           </div>
