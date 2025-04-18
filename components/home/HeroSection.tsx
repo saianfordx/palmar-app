@@ -336,7 +336,7 @@ export const HeroSection = () => {
           </div>
           
           <p className="text-xl md:text-2xl mb-12 max-w-2xl mx-auto text-white/90 leading-relaxed">
-          En la Cúspide de la Innovación, con la Fuerza de Nuestro Legado
+          En la cúspide de la innovación, con la fuerza de nuestro legado
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-10">

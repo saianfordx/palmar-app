@@ -223,7 +223,7 @@ export const HotelSection = () => {
         }`}>
           <MayanHeading 
             badge="Alojamiento" 
-            title="Royalton Riviera Cancun" 
+            title="Royalton Riviera Cancún" 
             size="xl"
           />
         </div>
@@ -255,8 +255,11 @@ export const HotelSection = () => {
                     </div>
                   </div>
                   <p className="text-gray-300 leading-relaxed">
-                    El Royalton Riviera Cancun es un lujoso complejo de 5 estrellas ubicado en la hermosa Riviera
-                    Maya. Con acceso directo a la playa y rodeado de exuberante vegetación tropical, ofrece una experiencia
+                    El Royalton Riviera Cancún es un lujoso complejo de 5 estrellas ubicado en la hermosa Riviera
+                    Maya.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                 Con acceso directo a la playa y rodeado de exuberante vegetación tropical, ofrece una experiencia
                     única para los asistentes al evento Pal' Mar.
                   </p>
                 </div>
