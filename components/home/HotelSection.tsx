@@ -275,8 +275,8 @@ export const HotelSection = () => {
                       <MayanBuildingIcon />
                     </div>
                     <div>
-                      <h4 className="font-medium text-white text-mayan">Dreambed™</h4>
-                      <p className="text-sm text-gray-400">Diseñada exclusivamente para Royalton Resorts</p>
+                      <h4 className="font-medium text-white text-mayan">Wellness</h4>
+                      <p className="text-sm text-gray-400">Gimnasios, canchas y 20% de descuento en spa</p>
                     </div>
                   </div>
                   
