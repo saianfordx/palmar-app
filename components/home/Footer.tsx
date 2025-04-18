@@ -73,12 +73,6 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#agenda" className="text-palmar-gold hover:text-palmar-cream transition-colors relative group">
-                  <span className="relative z-10">Agenda</span>
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-palmar-orange transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              </li>
-              <li>
                 <a href="#hotel" className="text-palmar-gold hover:text-palmar-cream transition-colors relative group">
                   <span className="relative z-10">Hotel</span>
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-palmar-orange transition-all duration-300 group-hover:w-full"></span>

@@ -65,9 +65,7 @@ export const Navbar = () => {
           <Link href="#acerca" className="hover:text-[#ffd863] transition-colors text-white font-medium">
             Acerca
           </Link>
-          <Link href="#agenda" className="hover:text-[#ffd863] transition-colors text-white font-medium">
-            Agenda
-          </Link>
+         
           <Link href="#hotel" className="hover:text-[#ffd863] transition-colors text-white font-medium">
             Hotel
           </Link>
