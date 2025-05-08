@@ -57,36 +57,69 @@ export const Navbar = () => {
           : 'bg-black text-white shadow-md'
       }`}
     >
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-     
+      <div className="container mx-auto px-4 py-3">
+        {/* Desktop layout */}
+        <div className="hidden md:grid md:grid-cols-3 items-center">
+          {/* Left section - empty or logo */}
+          <div className="col-span-1"></div>
+          
+          {/* Center section - Navigation */}
+          <nav className="col-span-1 flex justify-center space-x-8">
+            <Link href="#acerca" className="hover:text-[#ffd863] transition-colors text-white font-medium">
+              Acerca
+            </Link>
+            <Link href="#hotel" className="hover:text-[#ffd863] transition-colors text-white font-medium">
+              Hotel
+            </Link>
+            <Link href="#galeria" className="hover:text-[#ffd863] transition-colors text-white font-medium">
+              Galería
+            </Link>
+          </nav>
+          
+          {/* Right section - Button */}
+          <div className="col-span-1 flex justify-end">
+            <Button className={`${
+              isTransparent 
+                ? 'bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30' 
+                : 'bg-[#ffd863] hover:bg-[#ffce3a] text-black'
+              } font-medium transition-all relative`}
+            >
+              <Link href="#room-registration">
+                Registrar habitación
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">nuevo</span>
+              </Link>
+            </Button>
+          </div>
         </div>
-        <nav className="hidden md:flex space-x-8">
-          <Link href="#acerca" className="hover:text-[#ffd863] transition-colors text-white font-medium">
-            Acerca
-          </Link>
-         
-          <Link href="#hotel" className="hover:text-[#ffd863] transition-colors text-white font-medium">
-            Hotel
-          </Link>
-          <Link href="#galeria" className="hover:text-[#ffd863] transition-colors text-white font-medium">
-            Galería
-          </Link>
-          <Link href="#registro" className="hover:text-[#ffd863] transition-colors text-white font-medium">
-            Registro
-          </Link>
-        </nav>
-        <Button className={`${
-          isTransparent 
-            ? 'bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30' 
-            : 'bg-[#ffd863] hover:bg-[#ffce3a] text-black'
-          } font-medium transition-all relative`}
-        >
-          <Link href="#room-registration">
-            Registrar habitación
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">nuevo</span>
-          </Link>
-        </Button>
+        
+        {/* Mobile layout */}
+        <div className="md:hidden flex flex-col items-center space-y-4">
+          {/* Navigation */}
+          <nav className="flex justify-center space-x-8 mb-2">
+            <Link href="#acerca" className="hover:text-[#ffd863] transition-colors text-white font-medium">
+              Acerca
+            </Link>
+            <Link href="#hotel" className="hover:text-[#ffd863] transition-colors text-white font-medium">
+              Hotel
+            </Link>
+            <Link href="#galeria" className="hover:text-[#ffd863] transition-colors text-white font-medium">
+              Galería
+            </Link>
+          </nav>
+          
+          {/* Button */}
+          <Button className={`${
+            isTransparent 
+              ? 'bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30' 
+              : 'bg-[#ffd863] hover:bg-[#ffce3a] text-black'
+            } font-medium transition-all relative`}
+          >
+            <Link href="#room-registration">
+              Registrar habitación
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">nuevo</span>
+            </Link>
+          </Button>
+        </div>
       </div>
     </header>
   )

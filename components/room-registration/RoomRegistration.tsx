@@ -110,9 +110,9 @@ export default function RoomRegistration() {
     return (
         <div className="w-full" id="room-registration">
             {/* Main content */}
-            <div className="flex w-full min-h-[600px]">
-                {/* Left side - Image */}
-                <div className="w-1/2 relative">
+            <div className="flex flex-col md:flex-row w-full min-h-[600px]">
+                {/* Image - second on mobile, first on desktop */}
+                <div className="w-full md:w-1/2 relative order-2 md:order-1 min-h-[300px] md:min-h-[600px]">
                     <Image 
                         src="/roomRegistration.png" 
                         alt="Room Registration" 
@@ -122,10 +122,10 @@ export default function RoomRegistration() {
                     />
                 </div>
                 
-                {/* Right side - Form */}
-                <div className="w-1/2 bg-gray-50 p-10 flex flex-col justify-center">
-                    <h2 className="text-4xl font-bold mb-4 text-brown-800">Registro</h2>
-                    <h3 className="text-4xl font-bold mb-8 text-brown-800">de Habitación</h3>
+                {/* Form - first on mobile, second on desktop */}
+                <div className="w-full md:w-1/2 bg-gray-50 p-6 md:p-10 flex flex-col justify-center order-1 md:order-2">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-2 md:mb-4 text-brown-800">Registro</h2>
+                    <h3 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-brown-800">de Habitación</h3>
                     
                     {message && (
                         <div className={`p-3 mb-6 rounded-md ${message.type === "success" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}>
