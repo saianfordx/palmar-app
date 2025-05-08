@@ -195,6 +195,14 @@ export default function RoomRegistration() {
                             </div>
                         </fieldset>
                         
+                        <div className="bg-blue-50 p-4 rounded-md mb-6 text-sm text-gray-700">
+                            <p className="font-medium mb-2">Recuerda lo siguiente:</p>
+                            <ul className="list-disc pl-5 space-y-1">
+                                <li>Las habitaciones son para 3 personas.</li>
+                                <li>Las habitaciones pueden ser mixtas.</li>
+                            </ul>
+                        </div>
+                        
                         <div className="pt-6">
                             <button 
                                 type="submit"
