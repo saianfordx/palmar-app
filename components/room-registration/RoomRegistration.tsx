@@ -13,12 +13,13 @@ export default function RoomRegistration() {
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState<{ type: "success" | "error", text: string } | null>(null);
     const [formValid, setFormValid] = useState(false);
+    const emailDomain = "@arkusnexus.com";
 
     // Validate form when formData changes
     useEffect(() => {
         const { encargado, persona_1, persona_2 } = formData;
         
-        // Check if all fields are filled
+        // Check if all fields are filled and have valid format
         const isValid = encargado.trim() !== "" && 
                         persona_1?.trim() !== "" && 
                         persona_2?.trim() !== "";
@@ -28,9 +29,16 @@ export default function RoomRegistration() {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
+        
+        // Remove domain if user types it manually
+        let processedValue = value;
+        if (value.includes(emailDomain)) {
+            processedValue = value.split(emailDomain)[0];
+        }
+        
         setFormData(prev => ({
             ...prev,
-            [name]: value
+            [name]: processedValue
         }));
     };
 
@@ -45,13 +53,20 @@ export default function RoomRegistration() {
         setLoading(true);
         setMessage(null);
 
+        // Add email domain to all fields before submission
+        const submissionData = {
+            encargado: `${formData.encargado}${emailDomain}`,
+            persona_1: `${formData.persona_1}${emailDomain}`,
+            persona_2: `${formData.persona_2}${emailDomain}`
+        };
+
         try {
             const response = await fetch("/api/rooms", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(submissionData)
             });
 
             const result = await response.json();
@@ -123,50 +138,59 @@ export default function RoomRegistration() {
                             <div className="space-y-6">
                                 <div>
                                     <label htmlFor="encargado" className="block text-sm font-medium text-gray-700 mb-1">
-                                        Persona a Cargo <span className="text-red-500">*</span>
+                                        Email de Persona a Cargo <span className="text-red-500">*</span>
                                     </label>
-                                    <input 
-                                        type="text"
-                                        id="encargado"
-                                        name="encargado"
-                                        value={formData.encargado}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full px-4 py-3 border-0 rounded-none border-b border-gray-300 focus:outline-none focus:border-black"
-                                        placeholder="Nombre completo"
-                                    />
+                                    <div className="flex items-center">
+                                        <input 
+                                            type="text"
+                                            id="encargado"
+                                            name="encargado"
+                                            value={formData.encargado}
+                                            onChange={handleChange}
+                                            required
+                                            className="w-full px-4 py-3 border-0 rounded-none border-b border-gray-300 focus:outline-none focus:border-black"
+                                            placeholder="usuario"
+                                        />
+                                        <span className="ml-1 text-gray-600">{emailDomain}</span>
+                                    </div>
                                 </div>
                                 
                                 <div>
                                     <label htmlFor="persona_1" className="block text-sm font-medium text-gray-700 mb-1">
-                                        Primera Persona <span className="text-red-500">*</span>
+                                        Email de Primera Persona <span className="text-red-500">*</span>
                                     </label>
-                                    <input 
-                                        type="text"
-                                        id="persona_1"
-                                        name="persona_1"
-                                        value={formData.persona_1}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full px-4 py-3 border-0 rounded-none border-b border-gray-300 focus:outline-none focus:border-black"
-                                        placeholder="Nombre completo"
-                                    />
+                                    <div className="flex items-center">
+                                        <input 
+                                            type="text"
+                                            id="persona_1"
+                                            name="persona_1"
+                                            value={formData.persona_1}
+                                            onChange={handleChange}
+                                            required
+                                            className="w-full px-4 py-3 border-0 rounded-none border-b border-gray-300 focus:outline-none focus:border-black"
+                                            placeholder="usuario"
+                                        />
+                                        <span className="ml-1 text-gray-600">{emailDomain}</span>
+                                    </div>
                                 </div>
                                 
                                 <div>
                                     <label htmlFor="persona_2" className="block text-sm font-medium text-gray-700 mb-1">
-                                        Segunda Persona <span className="text-red-500">*</span>
+                                        Email de Segunda Persona <span className="text-red-500">*</span>
                                     </label>
-                                    <input 
-                                        type="text"
-                                        id="persona_2"
-                                        name="persona_2"
-                                        value={formData.persona_2}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full px-4 py-3 border-0 rounded-none border-b border-gray-300 focus:outline-none focus:border-black"
-                                        placeholder="Nombre completo"
-                                    />
+                                    <div className="flex items-center">
+                                        <input 
+                                            type="text"
+                                            id="persona_2"
+                                            name="persona_2"
+                                            value={formData.persona_2}
+                                            onChange={handleChange}
+                                            required
+                                            className="w-full px-4 py-3 border-0 rounded-none border-b border-gray-300 focus:outline-none focus:border-black"
+                                            placeholder="usuario"
+                                        />
+                                        <span className="ml-1 text-gray-600">{emailDomain}</span>
+                                    </div>
                                 </div>
                             </div>
                         </fieldset>
