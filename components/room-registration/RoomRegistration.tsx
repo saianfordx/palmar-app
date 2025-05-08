@@ -157,7 +157,7 @@ export default function RoomRegistration() {
                                 
                                 <div>
                                     <label htmlFor="persona_1" className="block text-sm font-medium text-gray-700 mb-1">
-                                        Email de Primera Persona <span className="text-red-500">*</span>
+                                        Email de Segunda Persona <span className="text-red-500">*</span>
                                     </label>
                                     <div className="flex items-center">
                                         <input 
@@ -176,7 +176,7 @@ export default function RoomRegistration() {
                                 
                                 <div>
                                     <label htmlFor="persona_2" className="block text-sm font-medium text-gray-700 mb-1">
-                                        Email de Segunda Persona <span className="text-red-500">*</span>
+                                        Email de Tercera Persona <span className="text-red-500">*</span>
                                     </label>
                                     <div className="flex items-center">
                                         <input 
