@@ -138,7 +138,7 @@ export default function RoomRegistration() {
                             <div className="space-y-6">
                                 <div>
                                     <label htmlFor="encargado" className="block text-sm font-medium text-gray-700 mb-1">
-                                        Email de Persona a Cargo <span className="text-red-500">*</span>
+                                        Email de Responsable de la habitacion <span className="text-red-500">*</span>
                                     </label>
                                     <div className="flex items-center">
                                         <input 
