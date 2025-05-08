@@ -12,6 +12,7 @@ import {
   Footer,
 
 } from "@/components/home"
+import RoomRegistration from "@/components/room-registration/RoomRegistration"
 
 export default function HomePage() {
   return (
@@ -22,7 +23,8 @@ export default function HomePage() {
       <HotelSection />
       <TravelInfoSection />
       <GallerySection />
-      <RegistrationSection />
+      <RoomRegistration />
+      {/* <RegistrationSection /> */}
       <Footer />
     </div>
   )
