@@ -93,7 +93,7 @@ export default function RoomRegistration() {
     };
 
     return (
-        <div className="w-full">
+        <div className="w-full" id="room-registration">
             {/* Main content */}
             <div className="flex w-full min-h-[600px]">
                 {/* Left side - Image */}

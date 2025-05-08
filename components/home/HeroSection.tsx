@@ -339,14 +339,14 @@ export const HeroSection = () => {
           En la cúspide de la innovación, con la fuerza de nuestro legado
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-10">
+          {/* <div className="flex flex-col sm:flex-row gap-6 justify-center mb-10">
             <Button size="lg" variant="palmarOrange" className="text-base backdrop-blur-sm bg-orange-500/90 border-orange-400/50 shadow-lg hover:shadow-orange-500/20 transition-all hover:-translate-y-1 py-6 px-8">
               <a href="#registro" className="flex items-center gap-2 w-full h-full">
                 <Sparkles className="h-5 w-5" />
                 <span>Quiero asistir</span>
               </a>
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

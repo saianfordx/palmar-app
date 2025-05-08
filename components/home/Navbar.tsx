@@ -80,9 +80,12 @@ export const Navbar = () => {
           isTransparent 
             ? 'bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30' 
             : 'bg-[#ffd863] hover:bg-[#ffce3a] text-black'
-          } font-medium transition-all`}
+          } font-medium transition-all relative`}
         >
-          <Link href="#registro">Registrarme</Link>
+          <Link href="#room-registration">
+            Registrar habitación
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">nuevo</span>
+          </Link>
         </Button>
       </div>
     </header>
