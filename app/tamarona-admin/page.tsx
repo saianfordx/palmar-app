@@ -22,6 +22,32 @@ export default function TamaronaAdmin() {
   const [error, setError] = useState<string | null>(null);
   const [selectedRooms, setSelectedRooms] = useState<Set<number>>(new Set());
   const [searchQuery, setSearchQuery] = useState('');
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [currentRoom, setCurrentRoom] = useState<Room | null>(null);
+  const [formData, setFormData] = useState({
+    encargado: '',
+    persona_1: '',
+    persona_2: ''
+  });
+  const [updateStatus, setUpdateStatus] = useState<{
+    isLoading: boolean;
+    error: string | null;
+    success: boolean;
+  }>({
+    isLoading: false,
+    error: null,
+    success: false
+  });
+  const [deleteStatus, setDeleteStatus] = useState<{
+    isLoading: boolean;
+    error: string | null;
+    success: boolean;
+  }>({
+    isLoading: false,
+    error: null,
+    success: false
+  });
 
   useEffect(() => {
     async function fetchRooms() {
@@ -58,6 +84,159 @@ export default function TamaronaAdmin() {
   
   const roomsWithFullCapacity = rooms.filter(room => room.encargado && room.persona_1 && room.persona_2).length;
   const roomsWithPartialCapacity = totalRooms - roomsWithFullCapacity;
+
+  // Handle edit button click
+  const handleEditClick = (room: Room) => {
+    setCurrentRoom(room);
+    setFormData({
+      encargado: room.encargado,
+      persona_1: room.persona_1 || '',
+      persona_2: room.persona_2 || ''
+    });
+    setIsEditModalOpen(true);
+    setUpdateStatus({
+      isLoading: false,
+      error: null,
+      success: false
+    });
+  };
+
+  // Handle form input change
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!currentRoom) return;
+    
+    setUpdateStatus({
+      isLoading: true,
+      error: null,
+      success: false
+    });
+    
+    try {
+      const response = await fetch('/api/rooms', {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          id: currentRoom.id,
+          encargado: formData.encargado,
+          persona_1: formData.persona_1 || null,
+          persona_2: formData.persona_2 || null
+        })
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        // Update the rooms list with updated data
+        setRooms(rooms.map(room => 
+          room.id === currentRoom.id ? { ...room, ...data.data[0] } : room
+        ));
+        
+        setUpdateStatus({
+          isLoading: false,
+          error: null,
+          success: true
+        });
+        
+        // Close modal after short delay
+        setTimeout(() => {
+          setIsEditModalOpen(false);
+        }, 1500);
+      } else {
+        setUpdateStatus({
+          isLoading: false,
+          error: data.error || 'Error updating room',
+          success: false
+        });
+      }
+    } catch (error) {
+      console.error('Error updating room:', error);
+      setUpdateStatus({
+        isLoading: false,
+        error: 'Error connecting to server',
+        success: false
+      });
+    }
+  };
+
+  // Handle modal close
+  const handleModalClose = () => {
+    setIsEditModalOpen(false);
+    setIsDeleteModalOpen(false);
+    setCurrentRoom(null);
+  };
+
+  // Handle delete button click
+  const handleDeleteClick = (room: Room) => {
+    setCurrentRoom(room);
+    setIsDeleteModalOpen(true);
+    setDeleteStatus({
+      isLoading: false,
+      error: null,
+      success: false
+    });
+  };
+
+  // Handle delete confirmation
+  const handleDeleteConfirm = async () => {
+    if (!currentRoom) return;
+    
+    setDeleteStatus({
+      isLoading: true,
+      error: null,
+      success: false
+    });
+    
+    try {
+      const response = await fetch(`/api/rooms?id=${currentRoom.id}`, {
+        method: 'DELETE',
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        // Remove the deleted room from the list
+        setRooms(rooms.filter(room => room.id !== currentRoom.id));
+        
+        setDeleteStatus({
+          isLoading: false,
+          error: null,
+          success: true
+        });
+        
+        // Close modal after short delay
+        setTimeout(() => {
+          setIsDeleteModalOpen(false);
+          setCurrentRoom(null);
+        }, 1500);
+      } else {
+        setDeleteStatus({
+          isLoading: false,
+          error: data.error || 'Error deleting room',
+          success: false
+        });
+      }
+    } catch (error) {
+      console.error('Error deleting room:', error);
+      setDeleteStatus({
+        isLoading: false,
+        error: 'Error connecting to server',
+        success: false
+      });
+    }
+  };
 
   // Handle checkbox selection
   const toggleSelection = (id: number) => {
@@ -217,6 +396,7 @@ export default function TamaronaAdmin() {
                   <th className="py-2 px-4 border-b">Persona 2</th>
                   <th className="py-2 px-4 border-b">Created At</th>
                   <th className="py-2 px-4 border-b">People Count</th>
+                  <th className="py-2 px-4 border-b">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -238,6 +418,22 @@ export default function TamaronaAdmin() {
                       <td className="py-2 px-4 border-b">{room.persona_2 || '-'}</td>
                       <td className="py-2 px-4 border-b">{new Date(room.created_at).toLocaleString()}</td>
                       <td className="py-2 px-4 border-b text-center font-semibold">{peopleCount}</td>
+                      <td className="py-2 px-4 border-b">
+                        <div className="flex space-x-2">
+                          <button
+                            onClick={() => handleEditClick(room)}
+                            className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm"
+                          >
+                            Edit
+                          </button>
+                          <button
+                            onClick={() => handleDeleteClick(room)}
+                            className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm"
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </td>
                     </tr>
                   );
                 })}
@@ -245,6 +441,143 @@ export default function TamaronaAdmin() {
             </table>
           </div>
         </>
+      )}
+
+      {/* Edit Modal */}
+      {isEditModalOpen && currentRoom && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 w-full max-w-md">
+            <h2 className="text-xl font-semibold mb-4">Edit Room</h2>
+            
+            <form onSubmit={handleSubmit}>
+              <div className="mb-4">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="encargado">
+                  Encargado
+                </label>
+                <input
+                  type="email"
+                  id="encargado"
+                  name="encargado"
+                  value={formData.encargado}
+                  onChange={handleInputChange}
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  required
+                />
+              </div>
+              
+              <div className="mb-4">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="persona_1">
+                  Persona 1
+                </label>
+                <input
+                  type="email"
+                  id="persona_1"
+                  name="persona_1"
+                  value={formData.persona_1}
+                  onChange={handleInputChange}
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
+              
+              <div className="mb-6">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="persona_2">
+                  Persona 2
+                </label>
+                <input
+                  type="email"
+                  id="persona_2"
+                  name="persona_2"
+                  value={formData.persona_2}
+                  onChange={handleInputChange}
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
+              
+              {updateStatus.error && (
+                <div className="mb-4 text-red-500 text-sm">
+                  {updateStatus.error}
+                </div>
+              )}
+              
+              {updateStatus.success && (
+                <div className="mb-4 text-green-500 text-sm">
+                  Room updated successfully!
+                </div>
+              )}
+              
+              <div className="flex items-center justify-end">
+                <button
+                  type="button"
+                  onClick={handleModalClose}
+                  className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${
+                    updateStatus.isLoading ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
+                  disabled={updateStatus.isLoading}
+                >
+                  {updateStatus.isLoading ? 'Saving...' : 'Save'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Delete Confirmation Modal */}
+      {isDeleteModalOpen && currentRoom && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 w-full max-w-md">
+            <h2 className="text-xl font-semibold mb-4">Delete Room</h2>
+            
+            <div className="mb-6">
+              <p className="text-gray-700 mb-2">Are you sure you want to delete this room?</p>
+              <div className="bg-gray-100 p-3 rounded">
+                <p><strong>Encargado:</strong> {currentRoom.encargado}</p>
+                <p><strong>Persona 1:</strong> {currentRoom.persona_1 || '-'}</p>
+                <p><strong>Persona 2:</strong> {currentRoom.persona_2 || '-'}</p>
+              </div>
+              <p className="text-red-500 mt-3 text-sm">This action cannot be undone.</p>
+            </div>
+            
+            {deleteStatus.error && (
+              <div className="mb-4 text-red-500 text-sm">
+                {deleteStatus.error}
+              </div>
+            )}
+            
+            {deleteStatus.success && (
+              <div className="mb-4 text-green-500 text-sm">
+                Room deleted successfully!
+              </div>
+            )}
+            
+            <div className="flex items-center justify-end">
+              <button
+                type="button"
+                onClick={handleModalClose}
+                className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2"
+                disabled={deleteStatus.isLoading}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={handleDeleteConfirm}
+                className={`bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${
+                  deleteStatus.isLoading ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
+                disabled={deleteStatus.isLoading}
+              >
+                {deleteStatus.isLoading ? 'Deleting...' : 'Delete'}
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
