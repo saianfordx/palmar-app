@@ -23,7 +23,7 @@ export default function HomePage() {
       <HotelSection />
       <TravelInfoSection />
       <GallerySection />
-      <RoomRegistration />
+      {/* <RoomRegistration /> */}
       {/* <RegistrationSection /> */}
       <Footer />
     </div>

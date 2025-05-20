@@ -76,19 +76,8 @@ export const Navbar = () => {
             </Link>
           </nav>
           
-          {/* Right section - Button */}
+          {/* Right section - now empty */}
           <div className="col-span-1 flex justify-end">
-            <Button className={`${
-              isTransparent 
-                ? 'bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30' 
-                : 'bg-[#ffd863] hover:bg-[#ffce3a] text-black'
-              } font-medium transition-all relative`}
-            >
-              <Link href="#room-registration">
-                Registrar habitación
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">nuevo</span>
-              </Link>
-            </Button>
           </div>
         </div>
         
@@ -106,19 +95,6 @@ export const Navbar = () => {
               Galería
             </Link>
           </nav>
-          
-          {/* Button */}
-          <Button className={`${
-            isTransparent 
-              ? 'bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30' 
-              : 'bg-[#ffd863] hover:bg-[#ffce3a] text-black'
-            } font-medium transition-all relative`}
-          >
-            <Link href="#room-registration">
-              Registrar habitación
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">nuevo</span>
-            </Link>
-          </Button>
         </div>
       </div>
     </header>
