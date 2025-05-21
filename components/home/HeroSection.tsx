@@ -339,6 +339,25 @@ export const HeroSection = () => {
           En la cúspide de la innovación, con la fuerza de nuestro legado
           </p>
           
+          {/* Neon button - Descubre tu elemento */}
+          <a 
+            href="https://neo-maya-voting.vercel.app/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group transform hover:scale-105 transition-all duration-300 animate-float inline-block relative px-10 py-5 text-xl font-bold uppercase tracking-wider mb-10"
+          >
+            {/* Multiple glowing layers for enhanced neon effect */}
+            <span className="absolute inset-0 bg-gradient-to-r from-[#FFC300] via-[#FF5733] to-[#33C6FF] opacity-75 rounded-lg blur-lg group-hover:opacity-100 group-hover:blur-xl transition-all duration-500 animate-pulse"></span>
+            <span className="absolute inset-0 bg-gradient-to-l from-[#33C6FF] via-[#8D6E63] to-[#FFC300] opacity-50 rounded-lg blur-md group-hover:opacity-80 group-hover:blur-lg transition-all duration-500 animate-pulse" style={{animationDelay: "0.5s"}}></span>
+            <span className="absolute inset-0 bg-black/30 backdrop-blur-sm rounded-lg border border-white/30 group-hover:border-white/50 transition-all"></span>
+            <span className="relative flex items-center justify-center gap-3 text-white group-hover:text-[#ffd863] transition-colors duration-300 z-10">
+              Descubre tu elemento
+              <Sparkles className="h-5 w-5 animate-twinkle" />
+            </span>
+            {/* Extra glow effect when hovered */}
+            <span className="absolute -inset-1 bg-white/0 group-hover:bg-white/10 rounded-lg blur-xl transition-all duration-500 opacity-0 group-hover:opacity-100"></span>
+          </a>
+          
           {/* <div className="flex flex-col sm:flex-row gap-6 justify-center mb-10">
             <Button size="lg" variant="palmarOrange" className="text-base backdrop-blur-sm bg-orange-500/90 border-orange-400/50 shadow-lg hover:shadow-orange-500/20 transition-all hover:-translate-y-1 py-6 px-8">
               <a href="#registro" className="flex items-center gap-2 w-full h-full">
