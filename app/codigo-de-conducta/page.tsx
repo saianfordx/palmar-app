@@ -44,7 +44,7 @@ export default function CodigoDeConductaPage() {
           </p>
 
           <p className="mb-6 font-semibold leading-relaxed">
-            Si eres víctima de conductas abusivas, ves a otra persona que está siendo acosada, o tienes dudas, por favor contacta al equipo de People Care o Comunicación Interna.
+            Si eres víctima de conductas abusivas, ves a otra persona que está siendo acosada, o tienes dudas, por favor contacta al equipo de Cultura y Talento.
           </p>
 
           <div className="text-center mt-12">
