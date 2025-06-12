@@ -9,6 +9,7 @@ import {
   Elements2Section,
 
   RegistrationSection,
+  CodigoConductaSection,
   Footer,
 
 } from "@/components/home"
@@ -23,6 +24,7 @@ export default function HomePage() {
       <HotelSection />
       <TravelInfoSection />
       <GallerySection />
+      <CodigoConductaSection />
       {/* <RoomRegistration /> */}
       {/* <RegistrationSection /> */}
       <Footer />
