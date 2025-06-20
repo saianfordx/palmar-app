@@ -101,9 +101,14 @@ const agendaData: DayAgenda[] = [
     title: "Nos Vamos",
     items: [
       {
-        time: "7:00 AM - 9:30 AM",
-        activity: "Desayuno de despedida",
+        time: "7:00 AM - 10:00 AM",
+        activity: "Desayuno chill",
         location: 'Restaurante Buffet "Gourmet Marché"'
+      },
+      {
+        time: "7:00 AM - 03:00 PM",
+        activity: "Check-out 🏨 ¡Hasta pronto! Salidas 🚗🚌",
+        location: "Lobby"
       }
     ]
   }
