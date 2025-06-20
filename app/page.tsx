@@ -11,6 +11,7 @@ import {
   RegistrationSection,
   CodigoConductaSection,
   Footer,
+  AgendaSection,
 
 } from "@/components/home"
 import RoomRegistration from "@/components/room-registration/RoomRegistration"
@@ -21,6 +22,7 @@ export default function HomePage() {
       <Navbar />
       <HeroSection  /> 
       <Elements2Section />
+      <AgendaSection />
       <HotelSection />
       <TravelInfoSection />
       <GallerySection />
