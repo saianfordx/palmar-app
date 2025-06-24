@@ -6,31 +6,26 @@ import { CheckCircle, Shirt, Laptop, Sun } from 'lucide-react'
 const tips = [
   {
     number: 1,
-    text: "Leer el código de conducta (revisalo en la página de Palmar)",
-    icon: CheckCircle
-  },
-  {
-    number: 2,
     text: "Ropa cómoda y fresca (sneakers para actividades)",
     icon: Shirt
   },
   {
-    number: 3,
+    number: 2,
     text: "Lleva tu traje de baño, sombrero/gorra",
     icon: Sun
   },
   {
-    number: 4,
+    number: 3,
     text: "Bloqueador solar (biodegradable)",
     icon: Sun
   },
   {
-    number: 5,
+    number: 4,
     text: "Repelente para insectos",
     icon: Sun
   },
   {
-    number: 6,
+    number: 5,
     text: "En Sandbox habrá espacios de aprendizaje, ¡lleva tu laptop para aprovechar al máximo la experiencia!",
     icon: Laptop,
     highlight: true
