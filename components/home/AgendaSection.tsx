@@ -80,17 +80,17 @@ const agendaData: DayAgenda[] = [
         location: ""
       },
       {
-        time: "4:00 PM - 6:30 PM",
+        time: "4:00 PM - 6:00 PM",
         activity: "💧 AGUA: Team Building en la playa 🏖️",
         location: 'Playa "Central Beach"'
       },
       {
-        time: "6:30 PM - 7:30 PM",
+        time: "6:00 PM - 7:15 PM",
         activity: "Más tiempo para ti 🧘‍♀️... se viene la celebración",
         location: ""
       },
       {
-        time: "8:00 PM - 11:00 PM",
+        time: "7:15 PM - 10:30 PM",
         activity: "🔥 FUEGO: Cena + ceremonia especial 🎉🏡",
         location: 'Salón "Elementos"'
       }
