@@ -10,6 +10,7 @@ import {
 
   RegistrationSection,
   CodigoConductaSection,
+  TipsSection,
   Footer,
   AgendaSection,
 
@@ -25,6 +26,7 @@ export default function HomePage() {
       <AgendaSection />
       <HotelSection />
       <TravelInfoSection />
+      <TipsSection />
       <GallerySection />
       <CodigoConductaSection />
       {/* <RoomRegistration /> */}
